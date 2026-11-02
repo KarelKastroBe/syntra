@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Prototype - Inschrijving Bevestigd</title>
+    <link rel="stylesheet" href="assets/wireframe.css">
+    <link rel="stylesheet" href="assets/feedback-tool.css">
+    <script src="assets/wireframe.js" defer></script>
+    <script src="assets/feedback-tool.js" defer></script>
+    <script src="assets/schema-inspector.js" defer></script>
+</head>
+<body style="background:#F8FAFC;">
+
+    <!-- GLOBAL HEADER WIREFRAME -->
+    <header class="wf-header">
+        <div class="wf-container wf-main-header">
+            <a href="index.html" class="wf-brand-logo">
+                <div class="wf-logo-badge">S</div>
+                <div>
+                    <span class="wf-brand-name">SYNTRA</span>
+                    <span style="font-size:12px;display:block;font-weight:600;color:var(--wf-text-muted);" class="wf-brand-sub">Midden-Vlaanderen</span>
+                </div>
+            </a>
+            <div style="font-size:13px; font-weight:700; color:#059669; display:flex; align-items:center; gap:6px;">
+                <span>Status: Inschrijving Geregistreerd in ERP</span>
+            </div>
+            <div class="wf-nav-actions">
+                <a href="index.html" class="wf-btn wf-btn-outline wf-btn-sm">Naar Homepage &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONFIRMATION HERO -->
+    <main class="wf-section" style="padding:56px 0 80px;">
+        <div class="wf-container" style="max-width:840px; margin:0 auto;">
+            
+            <div style="background:#FFFFFF; border:2px solid #111827; border-radius:12px; padding:40px; box-shadow:0 8px 30px rgba(0,0,0,0.06); text-align:center;">
+                
+                <div style="width:64px; height:64px; border-radius:50%; background:#111827; color:#FFFFFF; font-size:16px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; margin-bottom:20px; letter-spacing:1px;">
+                    OK
+                </div>
+
+                <span class="wf-tag wf-tag-dark" style="margin-bottom:10px;">Inschrijvingsbewijs #SYN-2026-89412</span>
+                <h1 style="font-size:32px; font-weight:900; margin-bottom:12px;">
+                    Bedankt voor je inschrijving, Thomas!
+                </h1>
+                <p style="font-size:16px; color:var(--wf-text-muted); max-width:640px; margin:0 auto 28px; line-height:1.5;">
+                    We hebben jouw inschrijving succesvol geregistreerd in ons administratiesysteem (SIS). Je officiële bevestigingsmail met kalenderuitnodiging is verzonden naar <strong>thomas.peeters@voorbeeld.be</strong>.
+                </p>
+
+                <!-- CURSUS SUMMARY CARD -->
+                <div style="background:#F8FAFC; border:1px solid var(--wf-border); border-radius:8px; padding:24px; text-align:left; margin-bottom:32px;">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px; margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid #EEF2F6;">
+                        <div>
+                            <span class="wf-tag wf-tag-dark">Geboekte Cursus</span>
+                            <h2 style="font-size:20px; font-weight:800; margin-top:6px;">
+                                Residentieel Elektrotechnisch Installateur
+                            </h2>
+                            <div style="font-size:13px; color:var(--wf-text-muted); margin-top:4px;">
+                                Campus Sint-Niklaas (Truweelstraat 85) &bull; Atelier E102
+                            </div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div class="wf-price" style="font-size:22px;">&euro; 1.250,00</div>
+                            <small style="font-size:11px; color:var(--wf-text-muted);">BTW vrijgesteld (art. 44)</small>
+                        </div>
+                    </div>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:14px; font-size:13px;">
+                        <div>
+                            <span style="color:var(--wf-text-muted); display:block; font-size:11px; font-weight:700;">OPDRACHTGEVER / FACTUUR</span>
+                            <strong id="confirmClientName">Thomas Peeters</strong>
+                        </div>
+                        <div>
+                            <span style="color:var(--wf-text-muted); display:block; font-size:11px; font-weight:700;">AANTAL CURSISTEN</span>
+                            <strong id="confirmParticipantsCount">1 Cursist geregistreerd</strong>
+                        </div>
+                        <div>
+                            <span style="color:var(--wf-text-muted); display:block; font-size:11px; font-weight:700;">EERSTE LES</span>
+                            <strong>Maandag 14 september 2026</strong> (18:30)
+                        </div>
+                        <div>
+                            <span style="color:var(--wf-text-muted); display:block; font-size:11px; font-weight:700;">BETAALSTATUS</span>
+                            <strong id="confirmPaymentMethod">In afwachting factuur (30 dagen)</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var params = new URLSearchParams(window.location.search);
+                    var klanttype = params.get('klanttype');
+                    var bedrijfsnaam = params.get('bedrijfsnaam');
+                    var factVoornaam = params.get('fact_voornaam');
+                    var factAchternaam = params.get('fact_achternaam');
+                    var betaalmethode = params.get('betaalmethode');
+                    var voornamen = params.getAll('deelnemer_voornaam[]');
+
+                    if (klanttype === 'bedrijf' && bedrijfsnaam) {
+                        document.getElementById('confirmClientName').textContent = bedrijfsnaam;
+                    } else if (factVoornaam && factAchternaam) {
+                        document.getElementById('confirmClientName').textContent = factVoornaam + ' ' + factAchternaam;
+                    }
+
+                    if (voornamen && voornamen.length > 0) {
+                        var count = voornamen.length;
+                        document.getElementById('confirmParticipantsCount').textContent = count + (count === 1 ? ' Cursist geregistreerd' : ' Cursisten geregistreerd');
+                    }
+
+                    if (betaalmethode === 'bancontact') {
+                        document.getElementById('confirmPaymentMethod').textContent = 'Voldaan via Bancontact';
+                    } else if (betaalmethode === 'creditcard') {
+                        document.getElementById('confirmPaymentMethod').textContent = 'Voldaan via Kredietkaart';
+                    }
+                });
+                </script>
+
+                <!-- WAT GEBEURT ER NU TIJDLIJN -->
+                <div style="text-align:left; margin-bottom:32px;">
+                    <h3 style="font-size:18px; font-weight:800; margin-bottom:16px;">
+                        Wat gebeurt er nu?
+                    </h3>
+
+                    <div style="display:flex; flex-direction:column; gap:16px;">
+                        <div style="display:flex; gap:16px; align-items:flex-start;">
+                            <div style="width:28px; height:28px; border-radius:50%; background:#111827; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; flex-shrink:0;">1</div>
+                            <div>
+                                <strong>Bevestigingsmail &amp; Kalender (.ics)</strong>
+                                <p style="font-size:13px; color:var(--wf-text-muted); margin-top:2px;">Binnen enkele minuten ontvang je een overzichtsmail met de volledige kalender om direct in je agenda (Outlook, Google, Apple) te importeren.</p>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; gap:16px; align-items:flex-start;">
+                            <div style="width:28px; height:28px; border-radius:50%; background:#111827; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; flex-shrink:0;">2</div>
+                            <div>
+                                <strong>Factuur &amp; Opleidingsattesten</strong>
+                                <p style="font-size:13px; color:var(--wf-text-muted); margin-top:2px;">Je factuur volgt per e-mail met gestructureerde mededeling (30 dagen betaaltermijn). Indien van toepassing bezorgen we direct je attest voor Vlaams Opleidingsverlof of sectorale tussenkomst (Constructiv / Volta).</p>
+                            </div>
+                        </div>
+
+                        <div style="display:flex; gap:16px; align-items:flex-start;">
+                            <div style="width:28px; height:28px; border-radius:50%; background:#111827; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; flex-shrink:0;">3</div>
+                            <div>
+                                <strong>Praktische info vóór de start</strong>
+                                <p style="font-size:13px; color:var(--wf-text-muted); margin-top:2px;">Twee weken vóór de eerste les ontvang je alle details over parkeren, atelierveiligheid, je digitale Canvas-account en de benodigde veiligheidsschoenen.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACTIEKNOPPEN -->
+                <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap; border-top:1px solid var(--wf-border); padding-top:24px;">
+                    <a href="#" class="wf-btn wf-btn-primary" onclick="alert('In het uiteindelijke systeem downloadt de cursist hier zijn officiële inschrijvingsbewijs in PDF.'); return false;">
+                        Download Inschrijvingsbewijs (PDF)
+                    </a>
+                    <a href="zoeken.html" class="wf-btn wf-btn-outline">
+                        Bekijk nog andere opleidingen &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="wf-footer">
+        <div class="wf-container" style="text-align:center;">
+            <div>&copy; 2026 Syntra &bull; NxtPro &bull; Syntra Brussel. Prototype Wireframe Suite.</div>
+        </div>
+    </footer>
+
+</body>
+</html>

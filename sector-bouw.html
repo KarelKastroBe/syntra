@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Prototype - Sector Hub: Bouw &amp; Energie</title>
+    <link rel="stylesheet" href="assets/wireframe.css">
+    <link rel="stylesheet" href="assets/feedback-tool.css">
+    <script src="assets/wireframe.js" defer></script>
+    <script src="assets/feedback-tool.js" defer></script>
+    <script src="assets/schema-inspector.js" defer></script>
+</head>
+<body>
+
+    <!-- GLOBAL HEADER WIREFRAME -->
+    <header class="wf-header">
+        <div class="wf-topbar">
+            <div class="wf-container wf-topbar-flex">
+                <div>Campus Sint-Niklaas &bull; Mechelen &bull; Leuven &bull; Antwerpen &bull; Brussel &bull; Online</div>
+                <div style="display:flex;gap:16px;align-items:center;">
+                    <a href="sector-bouw.html#b2b-bouw" style="color:inherit;text-decoration:none;">Voor Bedrijven &amp; Maatwerk</a>
+                    <a href="index.html#infosessies" style="color:inherit;text-decoration:none;">Infomomenten</a>
+                    <a href="faq.html" style="color:inherit;text-decoration:none;">FAQ</a>
+                    <a href="#" style="color:inherit;text-decoration:none;">Contact</a>
+                    <a href="#" class="wf-top-favorites-btn" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+                        <span>♡</span> <span>Favorieten</span>
+                        <span class="wf-fav-count-badge" style="display:none;">0</span>
+                    </a>
+                    <a href="#" class="wf-top-user-btn" style="color:inherit;text-decoration:none;font-weight:700;">
+                        Aanmelden
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-container wf-main-header">
+            <a href="index.html" class="wf-brand-logo">
+                <div class="wf-logo-badge">S</div>
+                <div>
+                    <span class="wf-brand-name">SYNTRA</span>
+                    <span style="font-size:12px;display:block;font-weight:600;color:var(--wf-text-muted);" class="wf-brand-sub">Midden-Vlaanderen</span>
+                </div>
+            </a>
+            <nav>
+                <ul class="wf-nav-links">
+                    <li><a href="themas.html">Thema's</a></li>
+                    <li class="wf-nav-dropdown-item">
+                        <a href="themas.html" class="wf-dropdown-trigger" id="wfNavSectorenBtn" style="font-weight:800; border-bottom:2px solid var(--wf-primary); padding-bottom:2px;">
+                            Sectoren <span class="wf-dropdown-arrow">▾</span>
+                        </a>
+                        <div class="wf-dropdown-menu">
+                            <div class="wf-dropdown-header">
+                                <span>Kies een Sector Hub</span>
+                            </div>
+                            <div class="wf-dropdown-grid">
+                                <a href="sector-bouw.html" class="wf-dropdown-link is-featured">
+                                    <div>
+                                        <strong>Bouw &amp; Energie</strong>
+                                        <small>Werfleider, HVAC, Elektriciteit, Hernieuwbaar</small>
+                                    </div>
+                                    <span class="wf-tag wf-tag-sm" style="font-size:9px; margin-left:auto;">Actieve Hub</span>
+                                </a>
+                                <a href="opleiding.html" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Elektro &amp; Automatisering</strong>
+                                        <small>Residentieel, Industrieel, Domotica, AREI</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=digitaal" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Digitaal, Data &amp; AI</strong>
+                                        <small>Python, Cybersecurity, Prompt Engineering</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=zorg" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Zorg, Welzijn &amp; Zorgkundige</strong>
+                                        <small>Verzorgende, Tandartsassistent, Optiek</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=horeca" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Voeding, Horeca &amp; Bakkerij</strong>
+                                        <small>Kok, Sommelier, Brood &amp; Banket, Chocolatier</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=ondernemen" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Ondernemen &amp; Bedrijfsvoering</strong>
+                                        <small>Boekhouden, HR, Marketing, KMO-Leiderschap</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=creatief" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Creatief &amp; Ambacht</strong>
+                                        <small>Meubelmaker, Goudsmid, Leder, Interieur</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="wf-dropdown-footer">
+                                <a href="themas.html">Bekijk alle 18 sectoren &amp; vakgebieden &rarr;</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="zoeken.html">Alle Opleidingen</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Over Ons</a></li>
+                </ul>
+            </nav>
+            <div class="wf-nav-actions">
+                <a href="zoeken.html" class="wf-btn wf-btn-outline wf-btn-sm" id="wfNavSearchBtn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px; vertical-align:-1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Zoeken
+                </a>
+                <a href="themas.html" class="wf-btn wf-btn-primary wf-btn-sm">Opleiding kiezen &rarr;</a>
+            </div>
+        </div>
+
+        <!-- SECTOR / CLUSTER SUB-NAVIGATIEBALK (BOUW & ENERGIE) -->
+        <nav class="wf-cluster-nav" aria-label="Sector navigatie">
+            <div class="wf-container wf-cluster-nav-inner">
+                <div class="wf-cluster-brand">
+                    <span class="wf-cluster-badge">SECTOR HUB</span>
+                    <span>Bouw &amp; Energie</span>
+                </div>
+                <ul class="wf-cluster-links">
+                    <li><a href="#overzicht" class="active">Overzicht</a></li>
+                    <li><a href="#opleidingen">Bouwopleidingen (84)</a></li>
+                    <li><a href="#actueel">Actueel &amp; Wetgeving</a></li>
+                    <li><a href="#b2b-bouw">Voor Bouwbedrijven (B2B)</a></li>
+                    <li><a href="#subsidies">Constructiv Subsidies</a></li>
+                    <li><a href="#case-study">Klantcase</a></li>
+                </ul>
+                <div class="wf-cluster-actions">
+                    <input type="search" class="wf-cluster-search" id="sectorSearchInput" placeholder="Zoek binnen Bouw...">
+                    <a href="#b2b-bouw" class="wf-btn wf-btn-sm" style="background:#374151; color:#FFFFFF; text-decoration:none; padding:5px 12px; border-radius:4px; font-weight:700;">Contact Adviseur</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. SECTOR HERO BANNER -->
+    <section class="wf-section wf-hero-sector" id="overzicht" style="padding:72px 0; background:#FFFFFF; border-bottom:1px solid var(--wf-border);">
+        <div class="wf-container">
+            <div class="wf-grid-2" style="align-items:center;">
+                <div>
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:12px;">Sectorfocus: Bouw &amp; Energie</span>
+                    <h1 style="font-size:40px; font-weight:900; line-height:1.1; margin-bottom:16px;">
+                        OPLEIDINGEN &amp; EXPERTISE VOOR DE BOUWSECTOR
+                    </h1>
+                    <p style="font-size:17px; color:var(--wf-text-muted); margin-bottom:24px; line-height:1.5;">
+                        Van werfleider en verplichte veiligheidsattesten tot warmtepompen en circulaire bouwtechnieken. Ontdek onze praktijkopleidingen voor zelfstandige aannemers, werknemers en bouwteams.
+                    </p>
+                    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                        <a href="#opleidingen" class="wf-btn wf-btn-primary">Bekijk 84 bouwopleidingen &darr;</a>
+                        <a href="#b2b-bouw" class="wf-btn wf-btn-outline">In-company &amp; Werftraining</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="wf-img-ph" style="height:320px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. GEGROEPEERDE OPLEIDINGEN BOUW (Met subcategorie tabs) -->
+    <section class="wf-section bg-alt" id="opleidingen">
+        <div class="wf-container">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px;">
+                <div>
+                    <span class="wf-tag wf-tag-dark">Aanbod</span>
+                    <h2 style="font-size:28px; font-weight:800; margin-top:6px;">Opleidingen in de Bouwsector</h2>
+                </div>
+                <div style="display:flex; gap:8px;">
+                    <a href="zoeken.html" class="wf-btn wf-btn-outline wf-btn-sm">Open volledige catalogus &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Subdomein Filterknoppen (Jumpers) -->
+            <div class="wf-subdomain-filters" id="sectorSubdomainFilters" style="display:flex; gap:10px; margin-bottom:28px; flex-wrap:wrap; position:relative;">
+                <button class="wf-btn wf-btn-primary wf-btn-sm">Alle Bouwopleidingen (84)</button>
+                <button class="wf-btn wf-btn-outline wf-btn-sm">Werf &amp; Coördinatie (18)</button>
+                <button class="wf-btn wf-btn-outline wf-btn-sm">HVAC &amp; Sanitair (22)</button>
+                <button class="wf-btn wf-btn-outline wf-btn-sm">Elektrotechniek (24)</button>
+                <button class="wf-btn wf-btn-outline wf-btn-sm">Hout, Dak &amp; Schrijnwerk (14)</button>
+                <button class="wf-btn wf-btn-outline wf-btn-sm">Veiligheid &amp; VCA (6)</button>
+            </div>
+
+            <!-- Brede Cursuskaarten -->
+            <div class="wf-card-horizontal" id="sectorCourseElektro">
+                <button type="button" class="wf-fav-btn" data-course-id="EL-2026-RES" data-course-title="Residentieel Elektrotechnisch Installateur" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                    <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+                <div class="wf-img-ph" style="border-radius:0; border:none; border-right:1px solid var(--wf-border); min-width:140px;"></div>
+                <div class="wf-card-body" style="padding:20px;">
+                    <div style="display:flex; justify-content:space-between;">
+                        <span class="wf-tag wf-tag-dark">Geplande Sessies</span>
+                        <div class="wf-price" style="margin-right: 48px;">&euro; 1.250</div>
+                    </div>
+                    <h3 style="font-size:18px; font-weight:800; margin:6px 0;">
+                        <a href="opleiding.html" style="color:inherit; text-decoration:none;">Residentieel Elektrotechnisch Installateur</a>
+                    </h3>
+                    <p style="font-size:13px; color:var(--wf-text-muted); margin-bottom:12px;">
+                        Kappen, bekabelen, zekeringkasten plaatsen en AREI-conform opleveren in het praktijkatelier.
+                    </p>
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #EEF2F6; padding-top:10px; font-size:12px; color:var(--wf-text-muted);">
+                        <div>Mechelen &amp; Sint-Niklaas &bull; Start: September 2026</div>
+                        <a href="opleiding.html" class="wf-btn wf-btn-primary wf-btn-sm">Bekijk cursus &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wf-card-horizontal" id="sectorCourseWerfleider">
+                <button type="button" class="wf-fav-btn" data-course-id="BW-2026-WERF" data-course-title="Werfleider Woning- en Appartementsbouw" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                    <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </button>
+                <div class="wf-img-ph" style="border-radius:0; border:none; border-right:1px solid var(--wf-border); min-width:140px;"></div>
+                <div class="wf-card-body" style="padding:20px;">
+                    <div style="display:flex; justify-content:space-between;">
+                        <span class="wf-tag wf-tag-dark">Geplande Sessies</span>
+                        <div class="wf-price" style="margin-right: 48px;">&euro; 1.450</div>
+                    </div>
+                    <h3 style="font-size:18px; font-weight:800; margin:6px 0;">
+                        <a href="opleiding.html" style="color:inherit; text-decoration:none;">Werfleider Woning- en Appartementsbouw</a>
+                    </h3>
+                    <p style="font-size:13px; color:var(--wf-text-muted); margin-bottom:12px;">
+                        Volledig beheer van bouwwerven: onderaannemers aansturen, planning, veiligheid en kwaliteitscontrole.
+                    </p>
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #EEF2F6; padding-top:10px; font-size:12px; color:var(--wf-text-muted);">
+                        <div>Sint-Niklaas &amp; Brussel &bull; Start: Oktober 2026</div>
+                        <a href="opleiding.html" class="wf-btn wf-btn-primary wf-btn-sm">Bekijk cursus &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ACTUEEL SECTORNIEUWS & WETGEVING BOUW -->
+    <section class="wf-section" id="actueel" style="background:#F8FAFC;">
+        <div class="wf-container">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:32px;">
+                <div>
+                    <span class="wf-tag wf-tag-dark">Sector Actualiteit</span>
+                    <h2 style="font-size:28px; font-weight:800; margin-top:8px;">Nieuws, Veiligheid &amp; Wetgeving in de Bouw</h2>
+                </div>
+                <a href="#" style="font-size:13.5px; color:var(--wf-text-main); font-weight:700; text-decoration:underline;">Alle bouwnieuws &rarr;</a>
+            </div>
+
+            <div class="wf-grid-3">
+                <!-- Nieuws 1 -->
+                <div class="wf-card">
+                    <div class="wf-img-ph" style="height:140px; border-radius:0;"></div>
+                    <div class="wf-card-body">
+                        <span class="wf-tag wf-tag-outline" style="align-self:flex-start; margin-bottom:8px;">Wetgeving 2026</span>
+                        <h3 class="wf-card-title" style="font-size:16px;">
+                            Verstrengde Asbestattest Normen: Wat betekent dit voor aannemers?
+                        </h3>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.4; margin-bottom:12px;">
+                            Nieuwe regels voor renovatiewerken en verplichte certificeringen voor werfleiders en slopers.
+                        </p>
+                        <a href="#" style="font-size:12px; font-weight:700; color:var(--wf-text-main); text-decoration:underline;">Lees artikel &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Nieuws 2 -->
+                <div class="wf-card">
+                    <div class="wf-img-ph" style="height:140px; border-radius:0;"></div>
+                    <div class="wf-card-body">
+                        <span class="wf-tag wf-tag-outline" style="align-self:flex-start; margin-bottom:8px;">Subsidies &amp; Fondsen</span>
+                        <h3 class="wf-card-title" style="font-size:16px;">
+                            Constructiv Winteropleidingen: Tot 100% tussenkomst voor PC 124
+                        </h3>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.4; margin-bottom:12px;">
+                            Benut de kalmere winterperiode om bouwvakkers bij te scholen met maximale sectorale tussenkomst.
+                        </p>
+                        <a href="#subsidies" style="font-size:12px; font-weight:700; color:var(--wf-text-main); text-decoration:underline;">Bereken premie &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Nieuws 3 -->
+                <div class="wf-card">
+                    <div class="wf-img-ph" style="height:140px; border-radius:0;"></div>
+                    <div class="wf-card-body">
+                        <span class="wf-tag wf-tag-outline" style="align-self:flex-start; margin-bottom:8px;">Techniek</span>
+                        <h3 class="wf-card-title" style="font-size:16px;">
+                            RESCert Certificering Warmtepompen: De overstap naar elektrisch
+                        </h3>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.4; margin-bottom:12px;">
+                            Hoe HVAC-installateurs hun officieel RESCert-nummer behalen in 6 intensieve praktijkavonden.
+                        </p>
+                        <a href="opleiding.html" style="font-size:12px; font-weight:700; color:var(--wf-text-main); text-decoration:underline;">Bekijk opleiding &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. B2B MAATWERK VOOR BOUWBEDRIJVEN (NxtPro Pijler) -->
+    <section class="wf-section" style="background:#FFFFFF;" id="b2b-bouw">
+        <div class="wf-container">
+            <div class="wf-grid-2" style="align-items:center; background:#F8FAFC; border:2px solid var(--wf-primary); border-radius:12px; padding:48px 56px; gap:40px;">
+                <div>
+                    <span class="wf-tag wf-tag-dark">Voor Aannemers &amp; Bouwondernemingen</span>
+                    <h2 style="font-size:32px; font-weight:800; margin:12px 0 16px;">Opleiding op maat voor jouw bouwteam?</h2>
+                    <p style="color:var(--wf-text-muted); line-height:1.6; margin-bottom:24px;">
+                        Heb je meerdere arbeiders of werfleiders die een VCA-, hoogwerker- of asbestcertificaat moeten behalen? Wij organiseren gesloten groepstrainingen op jouw werf, in je bedrijf of op onze campussen.
+                    </p>
+                    <ul style="margin-bottom:28px; padding-left:20px; font-size:13.5px; color:var(--wf-text-muted); line-height:1.75;">
+                        <li>Officieel erkend opleidingsverstrekker voor <strong>Constructiv</strong> (Sectorpremie bouw PC 124).</li>
+                        <li>Flexibele data en uren: overdag, 's avonds, op zaterdag of tijdens de winterperiode.</li>
+                        <li>Vaste B2B sectoradviseur voor planning en subsidiedossiers.</li>
+                    </ul>
+                    <a href="#" class="wf-btn wf-btn-primary">Vraag een vrijblijvende B2B offerte aan &rarr;</a>
+                </div>
+
+                <div>
+                    <div class="wf-img-ph" style="height:320px;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SUBSIDIES & CONSTRUCTIV FINANCIERING -->
+    <section class="wf-section" id="subsidies" style="background:#F8FAFC;">
+        <div class="wf-container">
+            <div style="max-width:800px; margin:0 auto 36px; text-align:center;">
+                <span class="wf-tag wf-tag-dark">Financiering &amp; Premies</span>
+                <h2 style="font-size:28px; font-weight:800; margin:8px 0;">Hoe betaal je jouw bouwopleiding?</h2>
+                <p style="font-size:15px; color:var(--wf-text-muted);">
+                    Bouwbedrijven en zelfstandigen kunnen rekenen op forse sectorale steunmaatregelen die de opleidingskost aanzienlijk verlagen.
+                </p>
+            </div>
+
+            <div class="wf-grid-3">
+                <div class="wf-card" style="padding:24px;">
+                    <h3 style="font-size:16px; font-weight:800; margin-bottom:8px;">Constructiv (PC 124)</h3>
+                    <p style="font-size:13px; color:var(--wf-text-muted); line-height:1.5;">
+                        Tussenkomst in de loonkost en opleidingskost voor bouwarbeiders tijdens de winteropleidingen of het reguliere werkjaar.
+                    </p>
+                </div>
+                <div class="wf-card" style="padding:24px;">
+                    <h3 style="font-size:16px; font-weight:800; margin-bottom:8px;">Winteropleidingen Bouw</h3>
+                    <p style="font-size:13px; color:var(--wf-text-muted); line-height:1.5;">
+                        Tijdens de rustigere wintermaanden volgen bouwvakkers gratis opleidingen met een extra premie per opleidingsdag bovenop de uitkering.
+                    </p>
+                </div>
+                <div class="wf-card" style="padding:24px;">
+                    <h3 style="font-size:16px; font-weight:800; margin-bottom:8px;">Vlaams Opleidingsverlof</h3>
+                    <p style="font-size:13px; color:var(--wf-text-muted); line-height:1.5;">
+                        Recht op betaald verlof voor werknemers die een erkende beroepsopleiding volgen in de avonduren of in het weekend.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CASE STUDY / BLOG UIT DE BOUW -->
+    <section class="wf-section bg-alt" id="case-study">
+        <div class="wf-container">
+            <div style="max-width:800px; margin:0 auto; text-align:center;">
+                <span class="wf-tag wf-tag-outline">Sociaal Bewijs &amp; Ervaring</span>
+                <h2 style="font-size:26px; font-weight:800; margin:10px 0;">"Onze werfleiders schakelen nu direct digitaal"</h2>
+                <p style="font-size:15px; color:var(--wf-text-muted); line-height:1.6; margin-bottom:20px;">
+                    <em>"Dankzij de maatwerkopleiding digitale werfopvolging van NxtPro en Syntra verlopen onze werfverslagen en veiligheidsinspecties nu 40% sneller. De docent kende de specifieke problemen van onze werven door en door."</em>
+                </p>
+                <div style="font-weight:700;">Tom De Smet &bull; Algemeen Directeur Bouwwerken De Smet NV</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SECTOR NIEUWSBRIEF & OPLEIDINGSUPDATES -->
+    <section class="wf-section" id="sector-nieuwsbrief" style="padding: 72px 0;">
+        <div class="wf-container">
+            <div class="wf-sector-newsletter-box" style="max-width: 900px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 32px;">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom: 10px;">Blijf Voorop in Bouw &amp; Energie</span>
+                    <h2 style="font-size: 28px; font-weight: 900; margin-bottom: 12px; letter-spacing: -0.01em;">Abonneer je op Bouwnieuws &amp; Nieuwe Opleidingsreeksen</h2>
+                    <p style="font-size: 15px; color: var(--wf-text-muted); max-width: 680px; margin: 0 auto; line-height: 1.6;">
+                        Ontvang als eerste meldingen over nieuwe startdata, wijzigingen in wet- en regelgeving (o.a. AREI 2026, asbestattestatie, EPC-normen) en sectorale subsidies via Constructiv.
+                    </p>
+                </div>
+
+                <!-- Doelgroep Segmentatie -->
+                <div style="margin-bottom: 24px;">
+                    <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--wf-text-muted); margin-bottom: 10px; text-align: center;">
+                        Ik ben geïnteresseerd als:
+                    </div>
+                    <div class="wf-segment-pills" style="justify-content: center;">
+                        <button type="button" class="wf-segment-pill active" data-segment="particulier">
+                            Particulier / Carrièreswitcher
+                        </button>
+                        <button type="button" class="wf-segment-pill" data-segment="aannemer">
+                            Zelfstandig Aannemer / Installateur
+                        </button>
+                        <button type="button" class="wf-segment-pill" data-segment="bedrijf">
+                            Bouwbedrijf / HR &amp; Werfleiding
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Onderwerpen Checkboxen -->
+                <div class="wf-news-checkboxes" style="justify-content: center; margin-bottom: 28px;">
+                    <label>
+                        <input type="checkbox" id="wfNewsNormen" checked> Nieuwe wetgeving &amp; normen
+                    </label>
+                    <label>
+                        <input type="checkbox" id="wfNewsStartdata" checked> Nieuwe cursusstartdata
+                    </label>
+                    <label>
+                        <input type="checkbox" id="wfNewsSubsidies" checked> Subsidies &amp; winteropleidingen
+                    </label>
+                    <label>
+                        <input type="checkbox" id="wfNewsInfosessies"> Gratis infosessies
+                    </label>
+                </div>
+
+                <!-- Formulier Input -->
+                <form id="wfSectorNewsForm" style="display: flex; gap: 12px; max-width: 600px; margin: 0 auto; flex-wrap: wrap;" onsubmit="return false;">
+                    <input type="email" id="wfSectorNewsEmail" placeholder="Vul je professioneel of persoonlijk e-mailadres in..." class="wf-input" style="flex: 1; min-width: 260px;" required>
+                    <button type="button" id="wfSectorNewsBtn" class="wf-btn wf-btn-primary" style="white-space: nowrap;">
+                        Aanmelden voor Bouw-updates &rarr;
+                    </button>
+                </form>
+
+                <div id="wfSectorNewsSuccess" style="display: none; margin-top: 16px; padding: 14px 20px; background: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; color: #065F46; text-align: center; font-size: 14px; font-weight: 600;">
+                    ✓ Bedankt voor je inschrijving! Je ontvangt een bevestiging en wordt als eerste verwittigd over nieuwe bouwopleidingen en wetgevingsupdates.
+                </div>
+
+                <div style="font-size: 11.5px; color: var(--wf-text-muted); text-align: center; margin-top: 14px;">
+                    🔒 Geen spam. Maximaal 1x per maand. Uitschrijven kan op elk moment met 1 klik.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="wf-footer">
+        <div class="wf-container" style="text-align:center;">
+            <div>&copy; 2026 Syntra &bull; NxtPro &bull; Syntra Brussel. Prototype Wireframe Suite.</div>
+        </div>
+    </footer>
+
+</body>
+</html>

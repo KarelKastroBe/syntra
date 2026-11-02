@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Prototype - Opleidingsfiche: Residentieel Elektrotechnisch Installateur</title>
+    <link rel="stylesheet" href="assets/wireframe.css">
+    <link rel="stylesheet" href="assets/feedback-tool.css">
+    <script src="assets/wireframe.js" defer></script>
+    <script src="assets/feedback-tool.js" defer></script>
+    <script src="assets/schema-inspector.js" defer></script>
+</head>
+<body>
+
+    <!-- GLOBAL HEADER WIREFRAME -->
+    <header class="wf-header">
+        <div class="wf-topbar">
+            <div class="wf-container wf-topbar-flex">
+                <div>Campus Sint-Niklaas &bull; Mechelen &bull; Leuven &bull; Antwerpen &bull; Brussel &bull; Online</div>
+                <div style="display:flex;gap:16px;align-items:center;">
+                    <a href="sector-bouw.html#b2b-bouw" style="color:inherit;text-decoration:none;">Voor Bedrijven &amp; Maatwerk</a>
+                    <a href="index.html#infosessies" style="color:inherit;text-decoration:none;">Infomomenten</a>
+                    <a href="faq.html" style="color:inherit;text-decoration:none;">FAQ</a>
+                    <a href="#" style="color:inherit;text-decoration:none;">Contact</a>
+                    <a href="#" class="wf-top-favorites-btn" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+                        <span>♡</span> <span>Favorieten</span>
+                        <span class="wf-fav-count-badge" style="display:none;">0</span>
+                    </a>
+                    <a href="#" class="wf-top-user-btn" style="color:inherit;text-decoration:none;font-weight:700;">
+                        Aanmelden
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-container wf-main-header">
+            <a href="index.html" class="wf-brand-logo">
+                <div class="wf-logo-badge">S</div>
+                <div>
+                    <span class="wf-brand-name">SYNTRA</span>
+                    <span style="font-size:12px;display:block;font-weight:600;color:var(--wf-text-muted);" class="wf-brand-sub">Midden-Vlaanderen</span>
+                </div>
+            </a>
+            <nav>
+                <ul class="wf-nav-links">
+                    <li><a href="themas.html">Thema's</a></li>
+                    <li class="wf-nav-dropdown-item">
+                        <a href="themas.html" class="wf-dropdown-trigger" id="wfNavSectorenBtn">
+                            Sectoren <span class="wf-dropdown-arrow">▾</span>
+                        </a>
+                        <div class="wf-dropdown-menu">
+                            <div class="wf-dropdown-header">
+                                <span>Kies een Sector Hub</span>
+                            </div>
+                            <div class="wf-dropdown-grid">
+                                <a href="sector-bouw.html" class="wf-dropdown-link is-featured">
+                                    <div>
+                                        <strong>Bouw &amp; Energie</strong>
+                                        <small>Werfleider, HVAC, Elektriciteit, Hernieuwbaar</small>
+                                    </div>
+                                    <span class="wf-tag wf-tag-sm" style="font-size:9px; margin-left:auto;">Actieve Hub</span>
+                                </a>
+                                <a href="opleiding.html" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Elektro &amp; Automatisering</strong>
+                                        <small>Residentieel, Industrieel, Domotica, AREI</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=digitaal" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Digitaal, Data &amp; AI</strong>
+                                        <small>Python, Cybersecurity, Prompt Engineering</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=zorg" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Zorg, Welzijn &amp; Zorgkundige</strong>
+                                        <small>Verzorgende, Tandartsassistent, Optiek</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=horeca" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Voeding, Horeca &amp; Bakkerij</strong>
+                                        <small>Kok, Sommelier, Brood &amp; Banket, Chocolatier</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=ondernemen" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Ondernemen &amp; Bedrijfsvoering</strong>
+                                        <small>Boekhouden, HR, Marketing, KMO-Leiderschap</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=creatief" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Creatief &amp; Ambacht</strong>
+                                        <small>Meubelmaker, Goudsmid, Leder, Interieur</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="wf-dropdown-footer">
+                                <a href="themas.html">Bekijk alle 18 sectoren &amp; vakgebieden &rarr;</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="zoeken.html">Alle Opleidingen</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Over Ons</a></li>
+                </ul>
+            </nav>
+            <div class="wf-nav-actions">
+                <a href="zoeken.html" class="wf-btn wf-btn-outline wf-btn-sm" id="wfNavSearchBtn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px; vertical-align:-1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Zoeken
+                </a>
+                <a href="#sessies" class="wf-btn wf-btn-primary wf-btn-sm">Inschrijven &darr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div style="background:#FFFFFF; border-bottom:1px solid #EEF2F6; padding:12px 0; font-size:12px; color:var(--wf-text-muted);">
+        <div class="wf-container">
+            <a href="index.html" style="color:inherit;text-decoration:none;">Home</a> &rsaquo;
+            <a href="themas.html" style="color:inherit;text-decoration:none;">Bouw &amp; Energie</a> &rsaquo;
+            <a href="sector-bouw.html" style="color:inherit;text-decoration:none;">Elektrotechniek</a> &rsaquo;
+            <strong>Residentieel Elektrotechnisch Installateur</strong>
+        </div>
+    </div>
+
+    <!-- 1. HERO HEADER (Beroepstitel met Directe Inschrijf- & Prijskaart) -->
+    <section class="wf-section" style="background:#FFFFFF; padding:36px 0 28px; border-bottom:1px solid var(--wf-border);">
+        <div class="wf-container">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:36px; flex-wrap:wrap;">
+                
+                <!-- Linkerkolom: Beroepstitel, Tags, Korte samenvatting & Secundaire acties -->
+                <div style="flex:1; min-width:320px; max-width:740px;">
+                    <div style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
+                        <span class="wf-tag wf-tag-dark">8 Geplande Sessies 2026-2027</span>
+                        <span class="wf-tag wf-tag-outline">120 Lesuren &bull; 1 Schooljaar</span>
+                        <span class="wf-tag wf-tag-dark">Knelpuntberoep</span>
+                    </div>
+
+                    <h1 style="font-size:36px; font-weight:900; line-height:1.15; margin-bottom:12px;">
+                        Residentieel Elektrotechnisch Installateur
+                    </h1>
+
+                    <!-- Twee regels introductie conform NxtPro audit richtlijn -->
+                    <p style="font-size:16px; color:var(--wf-text-muted); line-height:1.55; margin-bottom:18px;">
+                        Word erkend elektricien. Leer residentiële installaties ontwerpen, veilig kappen en bekabelen, schakelkasten monteren en AREI-conform opleveren in onze hoogtechnologische praktijkateliers.
+                    </p>
+
+                    <!-- Secundaire Call-to-Actions rij -->
+                    <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:16px;">
+                        <a href="#programma" class="wf-btn wf-btn-outline">Bekijk lesprogramma</a>
+                        <button type="button" class="wf-fav-btn-hero" data-course-id="EL-2026-RES" data-course-title="Residentieel Elektrotechnisch Installateur" aria-label="Bewaar in favorieten">
+                            <svg class="wf-fav-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                            <span class="wf-fav-text">Bewaar als favoriet</span>
+                        </button>
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-ask-question" id="wfBtnAskQuestion">💬 Stel een vraag</button>
+                    </div>
+
+                    <!-- Infosessie teaser haakje direct onder de knoppen -->
+                    <div style="font-size:12px; color:var(--wf-text-muted); background:#F8FAFC; border:1px solid var(--wf-border); padding:7px 14px; border-radius:4px; display:inline-flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                        <span>🎟️ Twijfel je nog? Volg de <strong>gratis infosessie</strong> op do 03/09 om 18:30 (Campus Sint-Niklaas of webinar).</span>
+                        <a href="#" class="wf-btn-reserve-infosessie" style="color:var(--wf-primary); font-weight:700; text-decoration:underline;">Gratis plek reserveren &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Rechterkolom: Prominente Inschrijf- & Conversiekaart ter hoogte van de titel -->
+                <div style="width:330px; flex-shrink:0; background:#FFFFFF; border:2px solid var(--wf-border); border-radius:8px; padding:22px; box-shadow:0 4px 16px rgba(0,0,0,0.04);">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                        <span style="font-size:11px; text-transform:uppercase; letter-spacing:0.5px; font-weight:800; color:var(--wf-text-muted);">Inschrijving 2026-2027</span>
+                        <span class="wf-tag wf-tag-green" style="font-size:10px; padding:2px 6px;">8 sessies open</span>
+                    </div>
+
+                    <div style="font-size:28px; font-weight:900; line-height:1; margin-bottom:4px; color:var(--wf-text-main);">
+                        &euro; 1.250
+                        <span style="font-size:12px; font-weight:500; color:var(--wf-text-muted);">btw-vrijgesteld</span>
+                    </div>
+
+                    <div style="font-size:12.5px; font-weight:700; color:#0284C7; margin-bottom:16px;">
+                        of vanaf &euro; 312,50/mnd (renteloos)
+                    </div>
+
+                    <a href="#sessies" class="wf-btn wf-btn-primary" style="width:100%; justify-content:center; padding:12px 18px; font-size:14.5px; font-weight:800; margin-bottom:12px;">
+                        Kies jouw campus &amp; schrijf in &darr;
+                    </a>
+
+                    <div style="font-size:11.5px; color:var(--wf-text-muted); line-height:1.5; border-top:1px solid #EEF2F6; padding-top:10px; display:flex; flex-direction:column; gap:4px;">
+                        <div>✓ Erkend getuigschrift Vlaamse overheid</div>
+                        <div>✓ Subsidies (VOV, Volta, Constructiv)</div>
+                        <div>✓ 14 dagen kosteloze bedenktijd</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. DRIE HORIZONTALE OPPORTUNITY BLOKKEN (Geïntegreerde infostrip, geen losse Tailwind cards) -->
+    <section style="padding:24px 0; background:#FFFFFF; border-bottom:1px solid var(--wf-border);">
+        <div class="wf-container">
+            <div class="wf-horizontal-blocks">
+                <div class="wf-horiz-block">
+                    <h4>Op maat van jouw bedrijf?</h4>
+                    <p>Deze cursus exclusief voor jouw team op de werf of campus? <a href="#b2b-info">Vraag B2B offerte &rarr;</a></p>
+                </div>
+
+                <div class="wf-horiz-block">
+                    <h4>Vragen over voorkennis?</h4>
+                    <p>Twijfel je over de combinatie werk/studie? <a href="#docenten">Praat met trajectbegeleider &rarr;</a></p>
+                </div>
+
+                <div class="wf-horiz-block">
+                    <h4>Spreid je betaling of bespaar</h4>
+                    <p>Betaal in 4 renteloze schijven of benut sectorpremies (Constructiv / Volta) &amp; VOV. <a href="#subsidies">Bekijk afbetalingsplan &amp; premies &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ANCHOR NAVIGATION BAR (Cursusfiche Sticky In-Page Navigatie) -->
+    <nav class="wf-anchor-nav" aria-label="Inhoudsopgave Cursus">
+        <div class="wf-container wf-anchor-nav-inner">
+            <ul class="wf-anchor-links">
+                <li><a href="#programma" class="active">Lesprogramma</a></li>
+                <li><a href="#materiaal">Praktisch &amp; Materiaal</a></li>
+                <li><a href="#getuigschrift">Getuigschrift &amp; Diploma</a></li>
+                <li><a href="#toelating">Toelating &amp; Voor wie</a></li>
+                <li><a href="#beroep">Over het Beroep</a></li>
+                <li><a href="#sessies"><strong>Sessies &amp; Data (8)</strong></a></li>
+                <li><a href="#docenten">Docenten</a></li>
+                <li><a href="#subsidies">Subsidies &amp; Afbetalingsplan</a></li>
+                <li><a href="#galerij">Atelier &amp; Video</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#gerelateerd">Gerelateerd</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 4. LESPROGRAMMA & INHOUDELIJKE MODULES (#programma - Nu direct bovenaan!) -->
+    <section class="wf-section bg-alt" id="programma">
+        <div class="wf-container">
+            <div style="max-width:920px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Modulair Traject</span>
+                    <h2>Lesprogramma &amp; Inhoudelijke Modules (120 Lesuren)</h2>
+                    <p>
+                        De opleiding is opgedeeld in drie complementaire modules waarin theorie en atelierpraktijk elkaar voortdurend afwisselen:
+                    </p>
+                </div>
+
+                <!-- Module 1 Accordion -->
+                <details open class="wf-accordion">
+                    <summary style="display:flex; justify-content:space-between; align-items:center;">
+                        <span>Module 1: Basis Elektrotechniek, Wet van Ohm &amp; AREI Veiligheid</span>
+                        <span style="font-size:12px; color:var(--wf-text-muted); font-weight:600;">32 Lesuren</span>
+                    </summary>
+                    <div style="margin-top:14px; font-size:13.5px; color:var(--wf-text-main); line-height:1.65;">
+                        <ul style="padding-left:20px; display:flex; flex-direction:column; gap:6px;">
+                            <li>Gereedschapsleer en persoonlijke beschermingsmiddelen (PBM's in het atelier).</li>
+                            <li>Fundamentele elektriciteitsleer: spanning (V), stroomsterkte (I), weerstand (R) en vermogen (P).</li>
+                            <li>Wettelijke normen van het Algemeen Reglement op de Elektrische Installaties (AREI Boek 1).</li>
+                            <li>Tekenen en interpreteren van situatie-, ééndraads- en principeschema's.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Module 2 Accordion -->
+                <details class="wf-accordion">
+                    <summary style="display:flex; justify-content:space-between; align-items:center;">
+                        <span>Module 2: Leidingen, Buizen, Slijptechnieken &amp; Schakeltechniek</span>
+                        <span style="font-size:12px; color:var(--wf-text-muted); font-weight:600;">40 Lesuren</span>
+                    </summary>
+                    <div style="margin-top:14px; font-size:13.5px; color:var(--wf-text-main); line-height:1.65;">
+                        <ul style="padding-left:20px; display:flex; flex-direction:column; gap:6px;">
+                            <li>Sleuven frezen en inbouwpotjes plaatsen in baksteen, beton en gipskarton.</li>
+                            <li>Trekken van voorbedrade buizen (preflex) en kabelgoten volgens de regels van de kunst.</li>
+                            <li>Aansluiten van enkelpolige, tweepolige, wissel- en kruisschakelaars.</li>
+                            <li>Installatie van contactdozen, dimmers, teleruptoren en bewegingssensoren.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <!-- Module 3 Accordion -->
+                <details class="wf-accordion">
+                    <summary style="display:flex; justify-content:space-between; align-items:center;">
+                        <span>Module 3: Schakelkasten, Domotica, Keuring &amp; Laadpalen</span>
+                        <span style="font-size:12px; color:var(--wf-text-muted); font-weight:600;">48 Lesuren</span>
+                    </summary>
+                    <div style="margin-top:14px; font-size:13.5px; color:var(--wf-text-main); line-height:1.65;">
+                        <ul style="padding-left:20px; display:flex; flex-direction:column; gap:6px;">
+                            <li>Opbouw en bedrading van residentiële verdeelkasten (monofasig en 3x400V+N).</li>
+                            <li>Dimensioneren van automaten en differentieelschakelaars (300mA en 30mA).</li>
+                            <li>Aardingstechnieken: aardingslus, aardpennen slaan en spreidingsweerstand meten (&lt; 30 Ohm).</li>
+                            <li>Basis domotica en voorbereiding van aansluiting voor thuislaadpalen.</li>
+                            <li>Voorbereiding op de officiële AREI-gelijkvormigheidskeuring voor netkoppeling.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PRAKTISCHE VOORBEREIDING, MATERIAAL & EXTRA KOSTEN (#materiaal - Origineel SIS Veld!) -->
+    <section class="wf-section" id="materiaal" style="background:#FFFFFF;">
+        <div class="wf-container">
+            <div style="max-width:920px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Praktische Voorbereiding</span>
+                    <h2>Materiaal, Uitrusting &amp; Extra Kosten</h2>
+                    <p>
+                        Om veilig en efficiënt te werken in de praktijkateliers, beschikken cursisten over een eigen basisuitrusting:
+                    </p>
+                </div>
+
+                <div class="wf-grid-2" style="gap:20px; margin-bottom:24px;">
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); padding:18px 20px; border-radius:4px;">
+                        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Wat breng je zelf mee naar de eerste les?</h3>
+                        <ul style="font-size:13px; color:var(--wf-text-main); line-height:1.65; padding-left:18px;">
+                            <li><strong>Veiligheidsschoenen S3</strong> (verplicht in het atelier vanaf les 1).</li>
+                            <li>Stevige werkkledij of werkbroek met kniestukken.</li>
+                            <li>Set geïsoleerde schroevendraaiers (VDE 1000V: PZ1, PZ2, sleuf).</li>
+                            <li>Kniptang, striptang en ontmantelmes.</li>
+                            <li>Digitale universele multimeter (CAT III 600V minimum).</li>
+                            <li>Rolmeter (5 meter) en potlood.</li>
+                        </ul>
+                    </div>
+
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); padding:18px 20px; border-radius:4px;">
+                        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Inbegrepen in het Inschrijvingsgeld</h3>
+                        <ul style="font-size:13px; color:var(--wf-text-main); line-height:1.65; padding-left:18px;">
+                            <li>Toegang tot professionele ateliers en individuele montagewanden.</li>
+                            <li>Alle verbruiksmaterialen voor oefeningen: buizen, kabels, dozen, automaten.</li>
+                            <li>Gebruik van geijkte installatietesters en isolatiemeters.</li>
+                            <li>Digitale syllabi en toegang tot online leeromgeving (Canvas / Teams).</li>
+                            <li>Eerste deelname aan het praktijkexamen voor de vakjury.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background:#FFFFFF; border:1px dashed var(--wf-border-strong); padding:16px; border-radius:4px; font-size:13px;">
+                    <strong>Extra kosten / Handboeken:</strong>
+                    Voor deze opleiding is het naslagwerk <em>"AREI Boek 1 - Installaties op laagspanning"</em> aanbevolen (richtprijs: ca. &euro; 45). Dit kan tijdens de eerste lesweek met studentenkorting worden aangekocht via de campusshop of digitaal geraadpleegd worden via de FOD Economie.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. GETUIGSCHRIFT, DIPLOMA & EXAMENS (#getuigschrift - Origineel SIS Veld!) -->
+    <section class="wf-section bg-alt" id="getuigschrift">
+        <div class="wf-container">
+            <div style="max-width:920px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Certificering &amp; Erkenning</span>
+                    <h2>Examens, Getuigschrift &amp; Ondernemersdiploma</h2>
+                    <p>
+                        De evaluatie gebeurt via <strong>permanente beoordeling</strong> tijdens de atelierlessen en een afsluitende <strong>praktische proef</strong> voor een externe examenjury van erkende installateurs en sectorvertegenwoordigers.
+                    </p>
+                </div>
+
+                <div class="wf-grid-2" style="gap:20px; margin-bottom:24px;">
+                    <div style="border:1px solid var(--wf-border); padding:18px 20px; border-radius:4px; background:#FFFFFF;">
+                        <h3 style="font-size:15px; font-weight:800; margin-bottom:8px;">Officieel Getuigschrift Beroepskennis</h3>
+                        <p style="font-size:13px; color:var(--wf-text-muted); line-height:1.5;">
+                            Wie slaagt voor de modules en de praktijkproef ontvangt het getuigschrift <em>Residentieel Elektrotechnisch Installateur</em>, wettelijk erkend door het <strong>Vlaams Agentschap voor Innoveren en Ondernemen (VLAIO)</strong>.
+                        </p>
+                    </div>
+
+                    <div style="border:1px solid var(--wf-border); padding:18px 20px; border-radius:4px; background:#FFFFFF;">
+                        <h3 style="font-size:15px; font-weight:800; margin-bottom:8px;">Vrijstellingen (EVK &amp; EVC)</h3>
+                        <p style="font-size:13px; color:var(--wf-text-muted); line-height:1.5;">
+                            Heb je reeds modules gevolgd in het technisch secundair onderwijs of relevante werfervaring? Dien dan bij aanvang een vrijstellingsdossier in bij de examencommissie.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Banner uit het originele SIS Template (Start Me Up Ondernemersdiploma) -->
+                <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-left:4px solid var(--wf-text-main); border-radius:4px; padding:18px 20px;">
+                    <div>
+                        <h3 style="font-size:15px; font-weight:800; margin-bottom:4px;">
+                            Maak van je getuigschrift een erkend Diploma met "Start Me Up"
+                        </h3>
+                        <p style="font-size:13px; color:var(--wf-text-muted); line-height:1.5; margin-bottom:8px;">
+                            Wil je starten als zelfstandig elektricien in hoofd- of bijberoep? Combineer dit beroepstraject met <strong>Start Me Up</strong> (ondernemersvaardigheden &amp; bedrijfsbeheer) en ontvang het volwaardige <strong>Vlaamse Diploma van Ondernemer</strong>.
+                        </p>
+                        <a href="#" style="font-size:12px; font-weight:700; color:var(--wf-text-main); text-decoration:underline;">Ontdek het Start Me Up traject &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. TOELATINGSVOORWAARDEN & VOOR WIE (#toelating - Origineel SIS Veld!) -->
+    <section class="wf-section" id="toelating" style="background:#F8FAFC;">
+        <div class="wf-container">
+            <div style="max-width:920px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Instapvoorwaarden</span>
+                    <h2>Toelatingsvoorwaarden &amp; Doelgroep</h2>
+                    <p>
+                        Bekijk of dit leertraject aansluit bij jouw voorkennis, ervaring en professionele doelstellingen:
+                    </p>
+                </div>
+
+                <div class="wf-grid-2" style="gap:20px;">
+                    <div>
+                        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Voor wie is deze opleiding bestemd?</h3>
+                        <ul style="font-size:13px; line-height:1.7; padding-left:18px; color:var(--wf-text-main);">
+                            <li><strong>Carrièreswitchers</strong> die kiezen voor een stabiel technisch knelpuntberoep.</li>
+                            <li><strong>Zelfstandige aannemers</strong> (ruwbouw, sanitair) die hun eigen elektriciteit willen leggen.</li>
+                            <li><strong>Onderhoudstechnici</strong> die hun vakkennis en AREI-kennis willen opfrissen.</li>
+                            <li><strong>Gemotiveerde doeners</strong> met ambitie om zelfstandig te installeren.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 style="font-size:15px; font-weight:800; margin-bottom:10px;">Instapvoorwaarden</h3>
+                        <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:4px; padding:16px; font-size:13px; line-height:1.6;">
+                            <div><strong>Minimumleeftijd:</strong> Minstens 18 jaar zijn bij de start van de cursus.</div>
+                            <div style="margin-top:6px;"><strong>Voorkennis:</strong> Geen specifieke elektrotechnische voorkennis vereist. Basiskennis rekenen volstaat.</div>
+                            <div style="margin-top:6px;"><strong>Taal:</strong> Goede kennis van het Nederlands (richtniveau B2) om de AREI-veiligheidsregels te begrijpen.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. OVER HET BEROEP & BEROEPSPROFIEL (#beroep - Nu lager geplaatst zoals gevraagd!) -->
+    <section class="wf-section bg-alt" id="beroep">
+        <div class="wf-container">
+            <div style="max-width:920px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Beroepsprofiel</span>
+                    <h2>Over het Beroep: Residentieel Elektrotechnisch Installateur</h2>
+                    <p>
+                        Als residentieel elektricien realiseer je complete elektrische installaties in woningen en appartementsgebouwen. Van de voorbereidende sleuven en leidingen tot het aansluiten van geavanceerde verdeelkasten, verlichting, laadinfrastructuur en domotica.
+                    </p>
+                </div>
+                <p style="font-size:15px; color:var(--wf-text-muted); line-height:1.65; margin-bottom:28px;">
+                    Door de energietransitie (warmtepompen, thuisbatterijen, zonnepanelen) is de vraag naar gekwalificeerde elektriciens groter dan ooit. Het beroep staat al jarenlang in de top van knelpuntberoepen van VDAB en biedt uitstekende werkzekerheid en doorgroeimogelijkheden.
+                </p>
+
+                <div class="wf-key-facts-strip">
+                    <div class="wf-key-fact">
+                        <strong class="wf-key-fact-label">Knelpuntberoep</strong>
+                        <p class="wf-key-fact-desc">Zeer hoge tewerkstellingsgraad direct na diplomering.</p>
+                    </div>
+                    <div class="wf-key-fact">
+                        <strong class="wf-key-fact-label">80% Praktijkatelier</strong>
+                        <p class="wf-key-fact-desc">Leren door te doen op professionele testpanelen.</p>
+                    </div>
+                    <div class="wf-key-fact">
+                        <strong class="wf-key-fact-label">AREI Boek 1 Keuring</strong>
+                        <p class="wf-key-fact-desc">Installaties direct conform opleveren voor het net.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. EFFECTIEVE INRICHTINGEN & SESSIES (Compacte Tabel Layout - Voldoet aan gebruikerswens!) -->
+    <section class="wf-section" id="sessies" style="background:#F8FAFC;">
+        <div class="wf-container">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:28px; flex-wrap:wrap; gap:16px;">
+                <div>
+                    <span class="wf-tag wf-tag-dark">Planning &amp; Inrichtingen</span>
+                    <h2 style="font-size:28px; font-weight:900; margin-top:8px;">
+                        Overzicht Inschrijfbare Cursussen (8 Sessies)
+                    </h2>
+                    <p style="font-size:14px; color:var(--wf-text-muted); margin-top:4px;">
+                        Selecteer jouw gewenste campus en lesmoment. Klik op <em>"Lessenrooster ▾"</em> voor de specifieke kalender.
+                    </p>
+                </div>
+                <div style="font-size:13.5px; color:var(--wf-text-muted);">
+                    Standaardprijs: <strong>&euro; 1.250</strong> (Vrijgesteld van BTW &bull; Gespreide betaling mogelijk)
+                </div>
+            </div>
+
+            <!-- COMPACTE SESSIE TABEL -->
+            <div class="wf-sessions-table">
+                <!-- Header Row -->
+                <div class="wf-session-row is-header">
+                    <div>Campus &amp; Formule</div>
+                    <div>Periode &amp; Lesmoment</div>
+                    <div>Beschikbaarheid</div>
+                    <div>Prijs</div>
+                    <div style="text-align:right;">Acties</div>
+                </div>
+
+                <!-- Rij 1: Sint-Niklaas -->
+                <div class="wf-session-row">
+                    <div>
+                        <strong>Campus Sint-Niklaas</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Avondopleiding &bull; Docent M. Van Acker</div>
+                    </div>
+                    <div>
+                        <strong>14/09/2026 – 16/06/2027</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Maandag &amp; Woensdag (18:30 – 22:00)</div>
+                    </div>
+                    <div>
+                        <span class="wf-status-badge is-limited">Nog 2 vrije plaatsen</span>
+                    </div>
+                    <div>
+                        <strong>&euro; 1.250</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">Sectorpremie PC 124/149</div>
+                    </div>
+                    <div style="display:flex; gap:6px; justify-content:flex-end; align-items:center;">
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 8px; font-size:11px;" onclick="this.closest('.wf-session-row').nextElementSibling.classList.toggle('active')">Rooster ▾</button>
+                        <a href="afrekenen.html?campus=Sint-Niklaas&start=14/09/2026&moment=Maandag%20en%20Woensdag%2018:30" class="wf-btn wf-btn-primary wf-btn-sm" style="padding:4px 10px; font-size:12px;">Inschrijven &rarr;</a>
+                    </div>
+                </div>
+                <div class="wf-session-expand">
+                    <div class="wf-rooster-header">
+                        <div>
+                            <h4 style="font-size:16px; font-weight:800; display:flex; align-items:center; gap:8px;">
+                                <span>Lessenrooster Campus Sint-Niklaas</span>
+                                <span class="wf-tag wf-tag-dark">30 Sessies &bull; 120 Lesuren</span>
+                            </h4>
+                            <div style="font-size:12px; color:var(--wf-text-muted); margin-top:2px;">
+                                Truweelstraat 85 (Atelier Elektro E102) &bull; Maandag &amp; Woensdag (18:30 – 22:00) &bull; Docent Marc Van Acker
+                            </div>
+                        </div>
+
+                        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                            <div class="wf-rooster-switch">
+                                <button type="button" class="wf-rooster-switch-btn active" onclick="switchRoosterView(this, 'list')">
+                                    Lijstweergave
+                                </button>
+                                <button type="button" class="wf-rooster-switch-btn" onclick="switchRoosterView(this, 'cal')">
+                                    Kalenderweergave
+                                </button>
+                            </div>
+                            <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="font-size:11px; padding:5px 10px;" onclick="alert('Lessenrooster gedownload als .ics bestand voor Google Calendar / Outlook / Apple Agenda.');">
+                                Exporteer Agenda (.ics)
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- WEERGAVE 1: LIJSTWEERGAVE -->
+                    <div class="rooster-view-list" style="display:block;">
+                        <table class="wf-rooster-list-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:140px;">Datum &amp; Uren</th>
+                                    <th style="width:130px;">Sessie / Module</th>
+                                    <th>Inhoud in het Praktijkatelier</th>
+                                    <th style="width:150px;">Lokaal &amp; Docent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- September 2026 -->
+                                <tr style="background:#F1F5F9; font-weight:800; font-size:11px; color:#111827;">
+                                    <td colspan="4">SEPTEMBER 2026 &bull; MODULE 1: BASIS ELEKTROTECHNIEK &amp; AREI VEILIGHEID</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ma 14/09/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 1</span><br><small>Module 1</small></td>
+                                    <td><strong>Kick-off &amp; Atelierveiligheid</strong><br><small style="color:var(--wf-text-muted);">PBM's, gereedschapsleer en wettelijke veiligheidsinstructies AREI Boek 1.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wo 16/09/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 2</span><br><small>Module 1</small></td>
+                                    <td><strong>Wet van Ohm &amp; Fundamentele Formules</strong><br><small style="color:var(--wf-text-muted);">Spanning (U), stroom (I), weerstand (R) en vermogen (P) meten met universele multimeter.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ma 21/09/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 3</span><br><small>Module 1</small></td>
+                                    <td><strong>Eéndraads- en Situatieschema's</strong><br><small style="color:var(--wf-text-muted);">AREI-conforme normsymbolen tekenen en interpreteren van elektrische grondplannen.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wo 23/09/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 4</span><br><small>Module 1</small></td>
+                                    <td><strong>Aarding &amp; Veiligheidskringen</strong><br><small style="color:var(--wf-text-muted);">Aardingslus, aardpennen slaan en spreidingsweerstand meten (&lt; 30 Ohm).</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ma 28/09/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 5</span><br><small>Module 1</small></td>
+                                    <td><strong>Dimensioneren van Leidingen &amp; Stroombanen</strong><br><small style="color:var(--wf-text-muted);">Doorsnedeberekening (1.5mm&sup2;, 2.5mm&sup2;, 4mm&sup2;, 6mm&sup2;) en kabeltypes (XVB, VOB, XGB).</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wo 30/09/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 6</span><br><small>Module 1</small></td>
+                                    <td><strong>Ateliertoets Module 1 &amp; Praktijkvoorbereiding</strong><br><small style="color:var(--wf-text-muted);">Zelfstandig uittekenen van een compleet woningplan volgens keuringsnormen.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+
+                                <!-- Oktober 2026 -->
+                                <tr style="background:#F1F5F9; font-weight:800; font-size:11px; color:#111827;">
+                                    <td colspan="4">OKTOBER 2026 &bull; MODULE 2: LEIDINGEN, BUIZEN &amp; SCHAKELTECHNIEKEN</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ma 05/10/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 7</span><br><small>Module 2</small></td>
+                                    <td><strong>Sleuven frezen &amp; inbouwdozen plaatsen</strong><br><small style="color:var(--wf-text-muted);">Slijp- en kaptechnieken in snelbouwsteen, beton en gipskarton.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wo 07/10/2026</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (4u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessie 8</span><br><small>Module 2</small></td>
+                                    <td><strong>Trekken van voorbedrade buizen (Preflex)</strong><br><small style="color:var(--wf-text-muted);">Buizen plooien, fixeren en kabelgoten loodrecht monteren.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ma 12/10 &amp; Wo 14/10</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (8u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessies 9-10</span><br><small>Module 2</small></td>
+                                    <td><strong>Klassieke Schakelingen: Wissel &amp; Kruis</strong><br><small style="color:var(--wf-text-muted);">Enkelpolig, dubbelpolig, 2- en 3-puntsbediening aansluiten op praktijkwand.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ma 19/10 &amp; Wo 21/10</strong><br><small style="color:var(--wf-text-muted);">18:30 – 22:00 (8u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">Sessies 11-12</span><br><small>Module 2</small></td>
+                                    <td><strong>Teleruptoren, Dimmers &amp; Sensoren</strong><br><small style="color:var(--wf-text-muted);">Drukknopsturingen op laagspanning (12V/24V) en bewegingsmelders.</small></td>
+                                    <td>Atelier E102<br><small style="color:var(--wf-text-muted);">M. Van Acker</small></td>
+                                </tr>
+
+                                <!-- Vakantie -->
+                                <tr class="is-vacation">
+                                    <td><strong>02/11 – 08/11/2026</strong></td>
+                                    <td><span class="wf-tag wf-tag-outline">Vakantie</span></td>
+                                    <td><strong>Herfstvakantie: Geen lessen</strong> &bull; Campus gesloten voor cursisten.</td>
+                                    <td>-</td>
+                                </tr>
+
+                                <!-- Eindexamen preview -->
+                                <tr style="background:#FEF3C7; font-weight:700;">
+                                    <td><strong>Za 19/06/2027</strong><br><small style="color:#92400E;">09:00 – 16:00 (7u)</small></td>
+                                    <td><span class="wf-tag wf-tag-dark">EINDEXAMEN</span></td>
+                                    <td><strong>Praktische Proef voor Externe Vakjury</strong><br><small style="color:#92400E;">Volledige installatie opbouwen, bedraden, onder spanning brengen en verdedigen voor de jury.</small></td>
+                                    <td>Atelier E102<br><small>Externe Jury</small></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- WEERGAVE 2: KALENDERWEERGAVE -->
+                    <div class="rooster-view-cal" style="display:none;">
+                        <div class="wf-cal-wrapper">
+                            <!-- Maand Navigatie -->
+                            <div class="wf-cal-nav">
+                                <button type="button" class="wf-cal-nav-btn" onclick="changeCalMonth(this, 'sep')">&larr; September 2026</button>
+                                <div style="font-size:15px; font-weight:900;">Maandkalender Elektro Atelier</div>
+                                <button type="button" class="wf-cal-nav-btn" onclick="changeCalMonth(this, 'okt')">Oktober 2026 &rarr;</button>
+                            </div>
+
+                            <!-- Maand 1: September 2026 -->
+                            <div class="wf-cal-month-data wf-cal-month-sep" style="display:block;">
+                                <div style="padding:10px 18px; background:#F1F5F9; font-size:13px; font-weight:800; border-bottom:1px solid var(--wf-border);">
+                                    September 2026 (Start Module 1)
+                                </div>
+                                <div class="wf-cal-grid">
+                                    <div class="wf-cal-head">MA</div>
+                                    <div class="wf-cal-head">DI</div>
+                                    <div class="wf-cal-head">WO</div>
+                                    <div class="wf-cal-head">DO</div>
+                                    <div class="wf-cal-head">VR</div>
+                                    <div class="wf-cal-head">ZA</div>
+                                    <div class="wf-cal-head">ZO</div>
+
+                                    <!-- Week 1: 31 aug - 6 sep -->
+                                    <div class="wf-cal-cell is-other-month"><span class="wf-cal-date">31</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">1</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">2</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">3</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">4</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">5</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">6</span></div>
+
+                                    <!-- Week 2: 7 - 13 sep -->
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">7</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">8</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">9</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">10</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">11</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">12</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">13</span></div>
+
+                                    <!-- Week 3: 14 - 20 sep (Start!) -->
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">14</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 1: Kick-off &amp; AREI
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">15</span></div>
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">16</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 2: Wet van Ohm
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">17</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">18</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">19</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">20</span></div>
+
+                                    <!-- Week 4: 21 - 27 sep -->
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">21</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 3: Schema's tekenen
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">22</span></div>
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">23</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 4: Aarding &amp; Normen
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">24</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">25</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">26</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">27</span></div>
+
+                                    <!-- Week 5: 28 - 30 sep -->
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">28</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 5: Kabeldoorsneden
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">29</span></div>
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">30</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 6: Ateliertoets Mod 1
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell is-other-month"><span class="wf-cal-date">1</span></div>
+                                    <div class="wf-cal-cell is-other-month"><span class="wf-cal-date">2</span></div>
+                                    <div class="wf-cal-cell is-weekend is-other-month"><span class="wf-cal-date">3</span></div>
+                                    <div class="wf-cal-cell is-weekend is-other-month"><span class="wf-cal-date">4</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Maand 2: Oktober 2026 -->
+                            <div class="wf-cal-month-data wf-cal-month-okt" style="display:none;">
+                                <div style="padding:10px 18px; background:#F1F5F9; font-size:13px; font-weight:800; border-bottom:1px solid var(--wf-border);">
+                                    Oktober 2026 (Module 2: Leidingen &amp; Schakelingen)
+                                </div>
+                                <div class="wf-cal-grid">
+                                    <div class="wf-cal-head">MA</div>
+                                    <div class="wf-cal-head">DI</div>
+                                    <div class="wf-cal-head">WO</div>
+                                    <div class="wf-cal-head">DO</div>
+                                    <div class="wf-cal-head">VR</div>
+                                    <div class="wf-cal-head">ZA</div>
+                                    <div class="wf-cal-head">ZO</div>
+
+                                    <!-- Week 1: 28 sep - 4 okt -->
+                                    <div class="wf-cal-cell is-other-month"><span class="wf-cal-date">28</span></div>
+                                    <div class="wf-cal-cell is-other-month"><span class="wf-cal-date">29</span></div>
+                                    <div class="wf-cal-cell is-other-month"><span class="wf-cal-date">30</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">1</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">2</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">3</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">4</span></div>
+
+                                    <!-- Week 2: 5 - 11 okt -->
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">5</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 7: Sleuven frezen
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">6</span></div>
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">7</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 8: Preflex buizen
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">8</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">9</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">10</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">11</span></div>
+
+                                    <!-- Week 3: 12 - 18 okt -->
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">12</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 9: Schakelingen
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">13</span></div>
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">14</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 10: Wissel/Kruis
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">15</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">16</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">17</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">18</span></div>
+
+                                    <!-- Week 4: 19 - 25 okt -->
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">19</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 11: Teleruptoren
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">20</span></div>
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">21</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 12: Dimmers &amp; Sensoren
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">22</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">23</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">24</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">25</span></div>
+
+                                    <!-- Week 5: 26 okt - 1 nov -->
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">26</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 13: Woonkamerinstallatie
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">27</span></div>
+                                    <div class="wf-cal-cell" style="background:#F8FAFC;">
+                                        <span class="wf-cal-date" style="color:#111827; font-weight:900;">28</span>
+                                        <div class="wf-cal-event">
+                                            <strong>18:30 – 22:00</strong><br>
+                                            Sessie 14: Foutopsporing
+                                        </div>
+                                    </div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">29</span></div>
+                                    <div class="wf-cal-cell"><span class="wf-cal-date">30</span></div>
+                                    <div class="wf-cal-cell is-weekend"><span class="wf-cal-date">31</span></div>
+                                    <div class="wf-cal-cell is-weekend is-other-month"><span class="wf-cal-date">1</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Kalender Legende -->
+                            <div style="padding:12px 18px; background:#F8FAFC; border-top:1px solid #EEF2F6; font-size:11px; display:flex; gap:16px; flex-wrap:wrap; color:var(--wf-text-muted);">
+                                <div style="display:flex; align-items:center; gap:6px;">
+                                    <span style="display:inline-block; width:10px; height:10px; background:#111827; border-radius:2px;"></span>
+                                    <span>Lesavond in het praktijkatelier (18:30 – 22:00)</span>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:6px;">
+                                    <span style="display:inline-block; width:10px; height:10px; background:#F3F4F6; border:1px dashed #CBD5E1; border-radius:2px;"></span>
+                                    <span>Lesvrije schoolvakantie / Feestdag</span>
+                                </div>
+                                <div style="display:flex; align-items:center; gap:6px;">
+                                    <span style="display:inline-block; width:10px; height:10px; background:#FEF3C7; border:1px solid #FCD34D; border-radius:2px;"></span>
+                                    <span>Afsluitend praktijkexamen met externe jury</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rij 2: Mechelen -->
+                <div class="wf-session-row">
+                    <div>
+                        <strong>Campus Mechelen</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Avondopleiding &bull; Docent J. De Ridder</div>
+                    </div>
+                    <div>
+                        <strong>15/09/2026 – 17/06/2027</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Dinsdag &amp; Donderdag (18:30 – 22:00)</div>
+                    </div>
+                    <div>
+                        <span class="wf-tag wf-tag-outline">5 vrije plaatsen</span>
+                    </div>
+                    <div>
+                        <strong>&euro; 1.250</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">Sectorpremie PC 124/149</div>
+                    </div>
+                    <div style="display:flex; gap:6px; justify-content:flex-end; align-items:center;">
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 8px; font-size:11px;" onclick="this.closest('.wf-session-row').nextElementSibling.classList.toggle('active')">Rooster ▾</button>
+                        <a href="afrekenen.html?campus=Mechelen&start=15/09/2026&moment=Dinsdag%20en%20Donderdag%2018:30" class="wf-btn wf-btn-primary wf-btn-sm" style="padding:4px 10px; font-size:12px;">Inschrijven &rarr;</a>
+                    </div>
+                </div>
+                <div class="wf-session-expand">
+                    <strong>Lessenrooster Mechelen (Zandpoortvest 60, Atelier A):</strong>
+                    Start 15/09, wekelijks op di &amp; do van 18:30 tot 22:00. Praktijkproef in juni 2027.
+                </div>
+
+                <!-- Rij 3: Asse -->
+                <div class="wf-session-row">
+                    <div>
+                        <strong>Campus Asse</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Zaterdagopleiding &bull; Docent K. Van Steen</div>
+                    </div>
+                    <div>
+                        <strong>19/09/2026 – 19/06/2027</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Elke zaterdag (08:30 – 16:30)</div>
+                    </div>
+                    <div>
+                        <span class="wf-status-badge is-limited">Nog 3 vrije plaatsen</span>
+                    </div>
+                    <div>
+                        <strong>&euro; 1.250</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">Sectorpremie PC 124/149</div>
+                    </div>
+                    <div style="display:flex; gap:6px; justify-content:flex-end; align-items:center;">
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 8px; font-size:11px;" onclick="this.closest('.wf-session-row').nextElementSibling.classList.toggle('active')">Rooster ▾</button>
+                        <a href="afrekenen.html?campus=Asse&start=19/09/2026&moment=Zaterdag%2008:30" class="wf-btn wf-btn-primary wf-btn-sm" style="padding:4px 10px; font-size:12px;">Inschrijven &rarr;</a>
+                    </div>
+                </div>
+                <div class="wf-session-expand">
+                    <strong>Lessenrooster Asse (Asphaltcosite 10):</strong>
+                    Ideaal naast voltijdse werkweek. Volledige zaterdagen inclusief lunchpauze (12:00 – 12:45).
+                </div>
+
+                <!-- Rij 4: Aalst (Fast Track) -->
+                <div class="wf-session-row">
+                    <div>
+                        <strong>Campus Aalst</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Dagopleiding (Fast Track 5 mnd)</div>
+                    </div>
+                    <div>
+                        <strong>21/09/2026 – 29/01/2027</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Maandag t.e.m. Vrijdag (09:00 – 16:30)</div>
+                    </div>
+                    <div>
+                        <span class="wf-tag wf-tag-outline">6 vrije plaatsen</span>
+                    </div>
+                    <div>
+                        <strong>&euro; 1.250</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">VDAB erkend</div>
+                    </div>
+                    <div style="display:flex; gap:6px; justify-content:flex-end; align-items:center;">
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 8px; font-size:11px;" onclick="this.closest('.wf-session-row').nextElementSibling.classList.toggle('active')">Rooster ▾</button>
+                        <a href="afrekenen.html?campus=Aalst&start=21/09/2026&moment=Maandag%20tot%20Vrijdag%2009:00" class="wf-btn wf-btn-primary wf-btn-sm" style="padding:4px 10px; font-size:12px;">Inschrijven &rarr;</a>
+                    </div>
+                </div>
+                <div class="wf-session-expand">
+                    <strong>Lessenrooster Aalst (Wijngaardveld 9):</strong>
+                    Intensief voltijds dagtraject: 4 dagen atelier per week + 1 stagedag per week bij een erkend installateur.
+                </div>
+
+                <!-- Rij 5: Brussel -->
+                <div class="wf-session-row">
+                    <div>
+                        <strong>Syntra Brussel</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Avond (Tour &amp; Taxis &bull; NL/FR)</div>
+                    </div>
+                    <div>
+                        <strong>22/09/2026 – 17/06/2027</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Dinsdag &amp; Donderdag (18:30 – 22:00)</div>
+                    </div>
+                    <div>
+                        <span class="wf-tag wf-tag-outline">4 vrije plaatsen</span>
+                    </div>
+                    <div>
+                        <strong>&euro; 1.250</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">Actiris premie</div>
+                    </div>
+                    <div style="display:flex; gap:6px; justify-content:flex-end; align-items:center;">
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 8px; font-size:11px;" onclick="this.closest('.wf-session-row').nextElementSibling.classList.toggle('active')">Rooster ▾</button>
+                        <a href="afrekenen.html?campus=Brussel&start=22/09/2026&moment=Dinsdag%20en%20Donderdag%2018:30" class="wf-btn wf-btn-primary wf-btn-sm" style="padding:4px 10px; font-size:12px;">Inschrijven &rarr;</a>
+                    </div>
+                </div>
+                <div class="wf-session-expand">
+                    <strong>Lessenrooster Brussel (Havenlaan 86C, Tour &amp; Taxis):</strong>
+                    Centrale locatie vlot bereikbaar met openbaar vervoer. Tweetalige ondersteuning voor vakjargon.
+                </div>
+
+                <!-- Rij 6: Gent -->
+                <div class="wf-session-row">
+                    <div>
+                        <strong>Campus Gent</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Avondopleiding &bull; Docent P. Martens</div>
+                    </div>
+                    <div>
+                        <strong>28/09/2026 – 23/06/2027</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Maandag &amp; Woensdag (18:30 – 22:00)</div>
+                    </div>
+                    <div>
+                        <span class="wf-status-badge is-full">Volzet (Wachtlijst)</span>
+                    </div>
+                    <div>
+                        <strong>&euro; 1.250</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">Wachtlijst</div>
+                    </div>
+                    <div style="display:flex; gap:6px; justify-content:flex-end; align-items:center;">
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 8px; font-size:11px;" onclick="this.closest('.wf-session-row').nextElementSibling.classList.toggle('active')">Rooster ▾</button>
+                        <a href="afrekenen.html?campus=Gent&start=28/09/2026&wachtlijst=true" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 10px; font-size:12px;">Wachtlijst &rarr;</a>
+                    </div>
+                </div>
+                <div class="wf-session-expand">
+                    <strong>Lessenrooster Gent (Sint-Denijs-Westrem):</strong>
+                    Sessie is momenteel volzet. Schrijf in op de wachtlijst; bij annulaties contacteren we kandidaten chronologisch.
+                </div>
+
+                <!-- Rij 7: Leuven -->
+                <div class="wf-session-row">
+                    <div>
+                        <strong>Campus Leuven</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Zaterdagopleiding &bull; Haasrode</div>
+                    </div>
+                    <div>
+                        <strong>03/10/2026 – 26/06/2027</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Zaterdag (09:00 – 17:00)</div>
+                    </div>
+                    <div>
+                        <span class="wf-tag wf-tag-outline">7 vrije plaatsen</span>
+                    </div>
+                    <div>
+                        <strong>&euro; 1.250</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">Sectorpremie PC 124/149</div>
+                    </div>
+                    <div style="display:flex; gap:6px; justify-content:flex-end; align-items:center;">
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:4px 8px; font-size:11px;" onclick="this.closest('.wf-session-row').nextElementSibling.classList.toggle('active')">Rooster ▾</button>
+                        <a href="afrekenen.html?campus=Leuven&start=03/10/2026&moment=Zaterdag%2009:00" class="wf-btn wf-btn-primary wf-btn-sm" style="padding:4px 10px; font-size:12px;">Inschrijven &rarr;</a>
+                    </div>
+                </div>
+                <div class="wf-session-expand">
+                    <strong>Lessenrooster Leuven (Geldenaaksebaan 327):</strong>
+                    Lessen in het gespecialiseerde atelier elektriciteit te Haasrode.
+                </div>
+
+                <!-- Rij 8: In-Company (NxtPro) -->
+                <div class="wf-session-row" id="b2b-info" style="background:#FAFBFD;">
+                    <div>
+                        <strong>In-Company Maatwerk (NxtPro)</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Voor Installatie- &amp; Bouwbedrijven</div>
+                    </div>
+                    <div>
+                        <strong>Data &amp; uren in overleg</strong>
+                        <div style="font-size:11px; color:var(--wf-text-muted);">Op jouw werf of Syntra-campus (4-12 pers.)</div>
+                    </div>
+                    <div>
+                        <span class="wf-tag wf-tag-dark">Op Aanvraag</span>
+                    </div>
+                    <div>
+                        <strong>Offerte</strong>
+                        <div style="font-size:10px; color:var(--wf-text-muted);">Constructiv PC 124</div>
+                    </div>
+                    <div style="display:flex; justify-content:flex-end;">
+                        <a href="#" class="wf-btn wf-btn-primary wf-btn-sm" style="padding:4px 10px; font-size:12px;">Offerte aanvragen &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GEEN ENKEL MOMENT PAST MIJ CALLOUT -->
+            <div class="wf-notify-banner">
+                <div class="wf-notify-icon">📅</div>
+                <div class="wf-notify-content">
+                    <strong>Past geen enkel van deze startmomenten of locaties in jouw planning?</strong>
+                    <p>Syntra opent regelmatig extra lesgroepen in het voorjaar of bijkomende campussen. Geef je voorkeur door en ontvang als eerste bericht zodra er nieuwe data bekend zijn.</p>
+                </div>
+                <div class="wf-notify-action">
+                    <button type="button" class="wf-btn wf-btn-outline" id="wfBtnNotifyNewDates">Houd mij op de hoogte &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. DOCENTEN & TRAJECTBEGELEIDING (#docenten) -->
+    <section class="wf-section bg-alt" id="docenten">
+        <div class="wf-container">
+            <div style="max-width:920px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Praktijkexperten</span>
+                    <h2>Jouw Docenten &amp; Trajectbegeleider</h2>
+                    <p>
+                        Bij Syntra en NxtPro krijg je les van zelfstandige vakmensen die dagelijks zelf residentiële werven leiden:
+                    </p>
+                </div>
+
+                <div class="wf-grid-2" style="gap:24px;">
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:6px; padding:22px 24px; display:flex; gap:18px; align-items:flex-start;">
+                        <div class="wf-img-ph" style="width:68px; height:76px; border-radius:6px; flex-shrink:0;"></div>
+                        <div>
+                            <h3 style="font-size:16px; font-weight:800; margin-bottom:2px;">Marc Van Acker</h3>
+                            <div style="font-size:11.5px; font-weight:700; color:var(--wf-text-muted); margin-bottom:6px;">Hoofddocent &bull; 25 jaar ervaring als erkend elektricien</div>
+                            <p style="font-size:13px; color:var(--wf-text-main); line-height:1.5;">
+                                "In mijn atelier leer je hoe het er op een echte werf aan toe gaat. Geen enkel verdeelbord heeft na dit jaar nog geheimen voor jou."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:6px; padding:22px 24px; display:flex; gap:18px; align-items:flex-start;">
+                        <div class="wf-img-ph" style="width:68px; height:76px; border-radius:6px; flex-shrink:0;"></div>
+                        <div>
+                            <h3 style="font-size:16px; font-weight:800; margin-bottom:2px;">Sarah Verbeeck</h3>
+                            <div style="font-size:11.5px; font-weight:700; color:var(--wf-text-muted); margin-bottom:6px;">Trajectbegeleider Elektrotechniek</div>
+                            <p style="font-size:13px; color:var(--wf-text-main); line-height:1.5; margin-bottom:12px;">
+                                "Vragen over vrijstellingen, subsidies of de combinatie met je werk? Contacteer mij gerust voor een persoonlijk infogesprek."
+                            </p>
+                            <button type="button" class="wf-btn wf-btn-outline wf-btn-sm wf-btn-ask-question" id="wfBtnAskDocent">💬 Stel een vraag aan Sarah &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. SUBSIDIES & SECTORPREMIES (#subsidies) -->
+    <section class="wf-section" id="subsidies" style="background:#F8FAFC;">
+        <div class="wf-container">
+            <div style="max-width:1100px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Financieel Voordeel &amp; Gespreide Betaling</span>
+                    <h2>Bespaar op Opleidingskosten met Subsidies &amp; Ons Afbetalingsplan</h2>
+                    <p>
+                        Wij nemen de financiële drempel weg: combineer renteloze betaling in schijven met officiële steunmaatregelen vanuit de sectorfondsen en de Vlaamse overheid:
+                    </p>
+                </div>
+
+                <div class="wf-grid-4" style="gap:16px; margin-bottom:24px;">
+                    <div style="background:#FFFFFF; border:2px solid #0284C7; border-radius:6px; padding:18px; position:relative;">
+                        <span style="position:absolute; top:-10px; right:12px; background:#0284C7; color:#fff; font-size:10px; font-weight:800; text-transform:uppercase; padding:2px 8px; border-radius:4px;">Zonder Meerkost</span>
+                        <h3 style="font-size:14px; font-weight:800; margin-bottom:4px; color:#0369A1;">Syntra Afbetalingsplan</h3>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.5;">
+                            Spreid het lesgeld over <strong>3 of 4 maandelijkse schijven</strong> van &euro; 312,50 (0% rente, geen dossierkosten). Direct geactiveerd bij online inschrijving.
+                        </p>
+                    </div>
+
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:6px; padding:18px;">
+                        <h3 style="font-size:14px; font-weight:800; margin-bottom:4px;">Opleidingscheques</h3>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.5;">
+                            Werknemers en zelfstandigen in bijberoep ontvangen tot <strong>&euro; 250 subsidie</strong> per kalenderjaar via de Vlaamse overheid.
+                        </p>
+                    </div>
+
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:6px; padding:18px;">
+                        <h3 style="font-size:14px; font-weight:800; margin-bottom:4px;">Vlaams Opleidingsverlof</h3>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.5;">
+                            Werknemers in de privésector hebben recht op maximaal <strong>125 uren betaald verlof</strong> met behoud van het gewone loon.
+                        </p>
+                    </div>
+
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:6px; padding:18px;">
+                        <h3 style="font-size:14px; font-weight:800; margin-bottom:4px;">Constructiv &amp; Volta</h3>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.5;">
+                            Sectorpremies voor arbeiders uit PC 124 (bouw) en PC 149.01 (elektro) met tussenkomsten tot 100% in cursusgeld en loonverlet.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- INTERACTIEVE SUBSIDIE & PRIJSREKENAAR -->
+                <div class="wf-calc-box" id="wfCalcBox">
+                    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:18px; border-bottom:1px solid var(--wf-border); padding-bottom:12px; flex-wrap:wrap; gap:8px;">
+                        <div>
+                            <span class="wf-tag wf-tag-green">Interactieve Calculator</span>
+                            <h3 style="font-size:18px; font-weight:800; margin-top:4px;">Wat kost deze opleiding jou écht?</h3>
+                        </div>
+                        <div style="font-size:12px; color:var(--wf-text-muted);">
+                            Standaard basistarief: <strong>&euro; 1.250</strong> (Vrijgesteld van btw &bull; betaalbaar in 4 schijven van &euro; 312,50)
+                        </div>
+                    </div>
+
+                    <div class="wf-calc-grid">
+                        <div class="wf-calc-options">
+                            <label class="active">
+                                <input type="radio" name="wf_calc_profile" value="particulier" checked>
+                                <div>
+                                    <strong>Particulier / Zelfbetalend</strong>
+                                    <small style="display:block; color:var(--wf-text-muted);">Betaal in 1 keer of in 4 renteloze schijven van &euro; 312,50/maand</small>
+                                </div>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="wf_calc_profile" value="cheques">
+                                <div>
+                                    <strong>Werknemer Privésector (Vlaanderen)</strong>
+                                    <small style="display:block; color:var(--wf-text-muted);">Vlaamse Opleidingscheques (-&euro; 250) + tot 125u VOV verlof</small>
+                                </div>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="wf_calc_profile" value="kmo">
+                                <div>
+                                    <strong>Zelfstandige of KMO (Vlaanderen)</strong>
+                                    <small style="display:block; color:var(--wf-text-muted);">30% subsidie via KMO-Portefeuille (VLAIO)</small>
+                                </div>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="wf_calc_profile" value="pc_124">
+                                <div>
+                                    <strong>Arbeider Bouwbedrijf (PC 124 Constructiv)</strong>
+                                    <small style="display:block; color:var(--wf-text-muted);">100% terugbetaald door sectorfonds Constructiv + premie</small>
+                                </div>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="wf_calc_profile" value="volta">
+                                <div>
+                                    <strong>Elektrotechnicus (PC 149.01 Volta)</strong>
+                                    <small style="display:block; color:var(--wf-text-muted);">100% kosteloos via sectorfonds Volta + sectorpremie</small>
+                                </div>
+                            </label>
+
+                            <label>
+                                <input type="radio" name="wf_calc_profile" value="vdab">
+                                <div>
+                                    <strong>Werkzoekende (VDAB)</strong>
+                                    <small style="display:block; color:var(--wf-text-muted);">100% kosteloos via erkend VDAB-opleidingscontract</small>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="wf-calc-result">
+                            <span style="font-size:11px; text-transform:uppercase; letter-spacing:0.5px; font-weight:800; color:var(--wf-text-muted);">Jouw berekende nettoprijs</span>
+                            <div class="wf-calc-amount" id="wfCalcAmount">&euro; 1.250</div>
+                            <div id="wfCalcMonthly" style="font-size:13px; font-weight:700; color:#0369A1; margin-bottom:6px;">of 4 &times; &euro; 312,50 / maand (renteloos afbetalingsplan)</div>
+                            <div style="font-weight:700; font-size:13px; color:#059669; margin-bottom:8px;" id="wfCalcDeduction">&euro; 0 subsidie</div>
+                            <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.45; margin-bottom:16px;" id="wfCalcNote">
+                                Standaardprijs inclusief praktijkmateriaal en examenkans voor de vakjury. Gespreide betaling mogelijk zonder meerkost.
+                            </p>
+                            <a href="#sessies" class="wf-btn wf-btn-primary wf-btn-sm" style="width:100%; justify-content:center;">Schrijf in met deze formule &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. ATELIER, PRAKTIJK & VIDEO IN BEELD (#galerij) -->
+    <section class="wf-section bg-alt" id="galerij">
+        <div class="wf-container">
+            <div style="max-width:1100px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Atelier &amp; Praktijk in Beeld</span>
+                    <h2>Kijk Binnen in het Praktijkatelier Elektrotechniek</h2>
+                    <p>
+                        Bij Syntra leer je geen theorie uit een boekje, maar sta je vanaf de eerste lesavond aan de montagewand met professioneel gereedschap, industriële installatietesters en hedendaagse domoticasystemen.
+                    </p>
+                </div>
+
+                <div class="wf-media-grid">
+                    <!-- VIDEO PLAYER CARD -->
+                    <div class="wf-video-card" id="wfCourseVideoCard" title="Klik om videoreportage te bekijken">
+                        <div class="wf-video-thumbnail wf-img-ph" data-design-img="assets/images/elektro-sfeer-2.jpg">
+                            <span class="wf-video-badge">▶ Video Reportage</span>
+                            <div class="wf-video-play-btn">▶</div>
+                            <span class="wf-video-duration">02:18 min</span>
+                        </div>
+                        <div class="wf-video-caption">
+                            <div>
+                                <h3 style="font-size:16px; font-weight:800; margin-bottom:6px;">
+                                    Een lesavond in het atelier met docent Marc Van Acker
+                                </h3>
+                                <p style="font-size:13px; color:var(--wf-text-muted); line-height:1.45; margin-bottom:12px;">
+                                    Bekijk hoe cursisten stapsgewijs een residentiële verdeelkast bedraden, foutstromen doormeten en voorbereiden op de officiële AREI-keuring voor de externe keurder.
+                                </p>
+                            </div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--wf-primary); font-weight:700;">
+                                <span>Bekijk videoreportage &rarr;</span>
+                                <span style="color:var(--wf-text-muted); font-weight:normal;">Campus Sint-Niklaas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOTO GALERIJ 2x2 -->
+                    <div class="wf-gallery-grid">
+                        <div class="wf-gallery-item" title="Montagewanden & Leidingtrajecten">
+                            <div class="wf-gallery-img wf-img-ph" data-design-img="assets/images/elektro-sfeer-1.jpg"></div>
+                            <div class="wf-gallery-caption">
+                                <span>1. Montagewanden &amp; leidingen kappen</span>
+                            </div>
+                        </div>
+
+                        <div class="wf-gallery-item" title="Zekeringkasten & Automaten Bedraden">
+                            <div class="wf-gallery-img wf-img-ph" data-design-img="assets/images/elektro-sfeer-3.jpg"></div>
+                            <div class="wf-gallery-caption">
+                                <span>2. Modulaire verdeelkast monteren</span>
+                            </div>
+                        </div>
+
+                        <div class="wf-gallery-item" title="Metingen & Keuring conform AREI">
+                            <div class="wf-gallery-img wf-img-ph" data-design-img="assets/images/elektro-sfeer-4.jpg"></div>
+                            <div class="wf-gallery-caption">
+                                <span>3. Isolatieweerstand &amp; AREI-keuring</span>
+                            </div>
+                        </div>
+
+                        <div class="wf-gallery-item" title="Domotica & Slimme Relaissturing">
+                            <div class="wf-gallery-img wf-img-ph" data-design-img="assets/images/elektro-sfeer-5.jpg"></div>
+                            <div class="wf-gallery-caption">
+                                <span>4. Domotica, dimmers &amp; teleruptoren</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 13. VEELGESTELDE VRAGEN CURSUS SPECIFIEK (#faq - Schema.org FAQPage Structured Data) -->
+    <section class="wf-section" id="faq" style="background:#FFFFFF; border-top:1px solid var(--wf-border);">
+        <div class="wf-container">
+            <div style="max-width:920px;">
+                <div class="wf-section-header">
+                    <span class="wf-tag wf-tag-blue" style="margin-bottom:8px;">Vragen &amp; Antwoorden</span>
+                    <h2>Veelgestelde Vragen over deze Opleiding</h2>
+                    <p>
+                        Heb je specifieke twijfels over materiaal, vooropleiding, examens of combinatie met je job? Hieronder vind je de meest gestelde vragen over <em>Residentieel Elektrotechnisch Installateur</em>:
+                    </p>
+                </div>
+
+                <div class="wf-course-faq-list" style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
+                    <details open class="wf-accordion">
+                        <summary style="font-size:15px; font-weight:700;">
+                            Moet ik op voorhand al gereedschap of een gereedschapskoffer aankopen?
+                        </summary>
+                        <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                            <p>Nee, we raden ten stelligste aan om tijdens de eerste lesavond af te stemmen met de vakdocent. Tijdens module 1 overlopen we de wettelijke isolatienormen (1000V VDE-gekeurd gereedschap) en persoonlijke beschermingsmiddelen. De grote machines, striptangen en installatietesters zijn aanwezig in onze praktijkateliers.</p>
+                        </div>
+                    </details>
+
+                    <details class="wf-accordion">
+                        <summary style="font-size:15px; font-weight:700;">
+                            Is het examen conform de AREI Boek 1 normen van de keuringsorganismen?
+                        </summary>
+                        <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                            <p>Ja. Het praktijkexamen bestaat uit het integraal monteren, bekabelen en foutloos aansluiten van een zekeringkast met differentieelschakelaars en automaten, inclusief aarding- en isolatiemeting. Dit wordt geëvalueerd volgens exact dezelfde normen die externe keuringsorganismen (zoals BTV, Vinçotte of OCB) hanteren bij residentiële indienststellingen.</p>
+                        </div>
+                    </details>
+
+                    <details class="wf-accordion">
+                        <summary style="font-size:15px; font-weight:700;">
+                            Kan ik met dit getuigschrift meteen aan de slag als zelfstandig elektricien?
+                        </summary>
+                        <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                            <p>Met het behaalde Getuigschrift bewijs je jouw technische vakkennis. Indien je je als zelfstandige elektricien in hoofd- of bijberoep wil vestigen in Vlaanderen, kan je dit certificaat direct combineren met de module <em>Basiskennis Bedrijfsbeheer / Ondernemerschap</em> om een officieel ondernemersdiploma te behalen.</p>
+                        </div>
+                    </details>
+
+                    <details class="wf-accordion">
+                        <summary style="font-size:15px; font-weight:700;">
+                            Wat gebeurt er als ik door overwerk of ziekte een praktijkles mis?
+                        </summary>
+                        <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                            <p>We hanteren een wettelijke aanwezigheidsgraad van minstens 80% om te mogen deelnemen aan de eindproeven. Mocht je door onvoorziene werk- of familiale omstandigheden een praktijksessie missen, voorzien onze campussen inhaalmomenten of kan je in samenspraak met de atelierbegeleider extra uren inplannen.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div style="background:#F8FAFC; border:1px solid #E2E8F0; border-radius:6px; padding:16px 20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                    <div>
+                        <strong style="font-size:13.5px; display:block; margin-bottom:2px;">Staat jouw specifieke vraag er niet tussen?</strong>
+                        <span style="font-size:12.5px; color:var(--wf-text-muted);">Bekijk onze algemene kennisbank of stel direct een vraag aan onze trajectbegeleider.</span>
+                    </div>
+                    <div style="display:flex; gap:10px;">
+                        <a href="faq.html" class="wf-btn wf-btn-outline wf-btn-sm">Alle FAQ's bekijken &rarr;</a>
+                        <button type="button" class="wf-btn wf-btn-primary wf-btn-sm wf-btn-ask-question" style="font-size:12px;">💬 Stel je vraag</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 14. GERELATEERDE OPLEIDINGEN (#gerelateerd) -->
+    <section class="wf-section" id="gerelateerd" style="background:#F8FAFC;">
+        <div class="wf-container">
+            <div class="wf-section-header">
+                <span class="wf-tag wf-tag-dark" style="margin-bottom:8px;">Verder Kijken</span>
+                <h2>Opleidingen die Je Mogelijk Ook Interesseren</h2>
+                <p>
+                    Verbreed je technische vaardigheden of combineer deze basiscursus met een gespecialiseerd vervolgtraject binnen de sector Bouw &amp; Energie.
+                </p>
+            </div>
+
+            <div class="wf-related-grid">
+                <!-- Related 1 -->
+                <div class="wf-related-card">
+                    <button type="button" class="wf-fav-btn" data-course-id="IND-2026-ELEK" data-course-title="Industrieel Elektrotechnisch Installateur" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                        <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                    <a href="opleiding.html?course=industrieel-elektro" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+                        <div class="wf-related-card-img wf-img-ph" data-design-img="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80"></div>
+                        <div class="wf-related-card-body">
+                            <div style="display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap;">
+                                <span class="wf-tag wf-tag-dark" style="font-size:11px;">Avondopleiding</span>
+                                <span class="wf-tag wf-tag-outline" style="font-size:11px;">160 lesuren</span>
+                            </div>
+                            <h3 style="font-size:15px; font-weight:800; margin-bottom:6px; line-height:1.3;">
+                                Industrieel Elektrotechnisch Installateur
+                            </h3>
+                            <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.45; margin-bottom:14px; flex:1;">
+                                Automatiseringskasten, 3-fasige motoren, PLC-sturingen en industriële vermogenschakelingen.
+                            </p>
+                            <div style="border-top:1px solid var(--wf-border); padding-top:10px; display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:11px; color:var(--wf-text-muted);">Aalst, Sint-Niklaas</span>
+                                <span style="font-size:13px; font-weight:800; color:var(--wf-primary);">&euro; 1.450</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Related 2 -->
+                <div class="wf-related-card">
+                    <button type="button" class="wf-fav-btn" data-course-id="HVAC-2026-WARM" data-course-title="Installateur Warmtepompen &amp; HVAC" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                        <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                    <a href="opleiding.html?course=warmtepompen" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+                        <div class="wf-related-card-img wf-img-ph" data-design-img="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80"></div>
+                        <div class="wf-related-card-body">
+                            <div style="display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap;">
+                                <span class="wf-tag wf-tag-green" style="font-size:11px;">Knelpuntberoep</span>
+                                <span class="wf-tag wf-tag-outline" style="font-size:11px;">1 Schooljaar</span>
+                            </div>
+                            <h3 style="font-size:15px; font-weight:800; margin-bottom:6px; line-height:1.3;">
+                                Installateur Warmtepompen &amp; HVAC
+                            </h3>
+                            <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.45; margin-bottom:14px; flex:1;">
+                                Dimensionering en hydraulische montage van lucht/water- en geothermische warmtepompen volgens RESCert.
+                            </p>
+                            <div style="border-top:1px solid var(--wf-border); padding-top:10px; display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:11px; color:var(--wf-text-muted);">Gent, Lokeren</span>
+                                <span style="font-size:13px; font-weight:800; color:var(--wf-primary);">&euro; 1.850</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Related 3 -->
+                <div class="wf-related-card">
+                    <button type="button" class="wf-fav-btn" data-course-id="PV-2026-ZON" data-course-title="Zonnepanelen &amp; Thuisbatterijen" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                        <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                    <a href="opleiding.html?course=zonnepanelen" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+                        <div class="wf-related-card-img wf-img-ph" data-design-img="https://images.unsplash.com/photo-1508873696983-2df5293cb32f?auto=format&fit=crop&w=600&q=80"></div>
+                        <div class="wf-related-card-body">
+                            <div style="display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap;">
+                                <span class="wf-tag wf-tag-dark" style="font-size:11px;">RESCert PV</span>
+                                <span class="wf-tag wf-tag-outline" style="font-size:11px;">40 lesuren</span>
+                            </div>
+                            <h3 style="font-size:15px; font-weight:800; margin-bottom:6px; line-height:1.3;">
+                                Zonnepanelen &amp; Thuisbatterijen
+                            </h3>
+                            <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.45; margin-bottom:14px; flex:1;">
+                                Veilig plaatsen van fotovoltaïsche omvormers, batterijopslagsystemen en netontkoppeling.
+                            </p>
+                            <div style="border-top:1px solid var(--wf-border); padding-top:10px; display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:11px; color:var(--wf-text-muted);">Aalst, Asse</span>
+                                <span style="font-size:13px; font-weight:800; color:var(--wf-primary);">&euro; 680</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Related 4 -->
+                <div class="wf-related-card">
+                    <button type="button" class="wf-fav-btn" data-course-id="BW-2026-WERF" data-course-title="Werfleider Bouw &amp; Technieken" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                        <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
+                    <a href="opleiding.html?course=werfleider" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; height:100%;">
+                        <div class="wf-related-card-img wf-img-ph" data-design-img="assets/images/hero-bouw.jpg"></div>
+                        <div class="wf-related-card-body">
+                            <div style="display:flex; gap:6px; margin-bottom:8px; flex-wrap:wrap;">
+                                <span class="wf-tag wf-tag-dark" style="font-size:11px;">Duaal Leren</span>
+                                <span class="wf-tag wf-tag-outline" style="font-size:11px;">120 lesuren</span>
+                            </div>
+                            <h3 style="font-size:15px; font-weight:800; margin-bottom:6px; line-height:1.3;">
+                                Werfleider Bouw &amp; Technieken
+                            </h3>
+                            <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.45; margin-bottom:14px; flex:1;">
+                                Stuur werven aan, bewaak planning, kwaliteitsnormen en budgetten en coördineer onderaannemers.
+                            </p>
+                            <div style="border-top:1px solid var(--wf-border); padding-top:10px; display:flex; justify-content:space-between; align-items:center;">
+                                <span style="font-size:11px; color:var(--wf-text-muted);">Sint-Niklaas, Gent</span>
+                                <span style="font-size:13px; font-weight:800; color:var(--wf-primary);">&euro; 1.350</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="wf-footer">
+        <div class="wf-container" style="text-align:center;">
+            <div>&copy; 2026 Syntra &bull; NxtPro &bull; Syntra Brussel. Prototype Wireframe Suite.</div>
+        </div>
+    </footer>
+
+    <!-- STRUCTURED DATA: Course & FAQPage Schema (Machine-readable for Google & AI Bot Indexering) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Course",
+          "@id": "https://syntra.local/wireframe/opleiding.html#course",
+          "name": "Residentieel Elektrotechnisch Installateur",
+          "description": "Word erkend residentieel elektricien. Leer residentiële installaties ontwerpen, veilig kappen en bekabelen, zekeringkasten monteren en AREI-conform opleveren in onze praktijkateliers.",
+          "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Syntra Midden-Vlaanderen",
+            "sameAs": "https://syntra.be",
+            "url": "https://syntra.local/wireframe/"
+          },
+          "educationalCredentialAwarded": "Erkend Getuigschrift Residentieel Elektrotechnisch Installateur (Vlaamse Gemeenschap)",
+          "occupationalCredentialAwarded": "AREI Keuringscertificaat & Vakbekwaamheid Elektricien",
+          "totalHistoricalEnrollment": 420,
+          "hasCourseInstance": [
+            {
+              "@type": "CourseInstance",
+              "courseMode": "Blended / Praktijk in Atelier",
+              "courseWorkload": "PT120H",
+              "startDate": "2026-09-22",
+              "endDate": "2027-06-15",
+              "location": {
+                "@type": "Place",
+                "name": "Syntra Campus Sint-Niklaas",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Hogekouter 1",
+                  "addressLocality": "Sint-Niklaas",
+                  "postalCode": "9100",
+                  "addressCountry": "BE"
+                }
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "1250",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2026-05-01",
+                "category": "Btw-vrijgesteld conform art. 44 W.BTW"
+              }
+            },
+            {
+              "@type": "CourseInstance",
+              "courseMode": "Avondonderwijs / Praktijk",
+              "courseWorkload": "PT120H",
+              "startDate": "2026-10-06",
+              "endDate": "2027-06-22",
+              "location": {
+                "@type": "Place",
+                "name": "Syntra Campus Mechelen",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Oude Baan 2",
+                  "addressLocality": "Mechelen",
+                  "postalCode": "2800",
+                  "addressCountry": "BE"
+                }
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "1250",
+                "priceCurrency": "EUR",
+                "availability": "https://schema.org/InStock",
+                "category": "Btw-vrijgesteld conform art. 44 W.BTW"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://syntra.local/wireframe/opleiding.html#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Moet ik op voorhand al gereedschap of een gereedschapskoffer aankopen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nee, we raden ten stelligste aan om tijdens de eerste lesavond af te stemmen met de vakdocent. Tijdens module 1 overlopen we de wettelijke isolatienormen (1000V VDE-gekeurd gereedschap) en persoonlijke beschermingsmiddelen. De grote machines, striptangen en installatietesters zijn aanwezig in onze praktijkateliers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is het examen conform de AREI Boek 1 normen van de keuringsorganismen?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Het praktijkexamen bestaat uit het integraal monteren, bekabelen en foutloos aansluiten van een zekeringkast met differentieelschakelaars en automaten, inclusief aarding- en isolatiemeting. Dit wordt geëvalueerd volgens exact dezelfde normen die externe keuringsorganismen (zoals BTV, Vinçotte of OCB) hanteren bij residentiële indienststellingen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kan ik met dit getuigschrift meteen aan de slag als zelfstandig elektricien?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Met het behaalde Getuigschrift bewijs je jouw technische vakkennis. Indien je je als zelfstandige elektricien in hoofd- of bijberoep wil vestigen in Vlaanderen, kan je dit certificaat direct combineren met de module Basiskennis Bedrijfsbeheer / Ondernemerschap om een officieel ondernemersdiploma te behalen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wat gebeurt er als ik door overwerk of ziekte een praktijkles mis?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We hanteren een wettelijke aanwezigheidsgraad van minstens 80% om te mogen deelnemen aan de eindproeven. Mocht je door onvoorziene werk- of familiale omstandigheden een praktijksessie missen, voorzien onze campussen inhaalmomenten of kan je in samenspraak met de atelierbegeleider extra uren inplannen."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Prototype - Zoeken &amp; Catalogus</title>
+    <link rel="stylesheet" href="assets/wireframe.css">
+    <link rel="stylesheet" href="assets/feedback-tool.css">
+    <script src="assets/wireframe.js" defer></script>
+    <script src="assets/feedback-tool.js" defer></script>
+    <script src="assets/schema-inspector.js" defer></script>
+</head>
+<body>
+
+    <!-- GLOBAL HEADER WIREFRAME -->
+    <header class="wf-header">
+        <div class="wf-topbar">
+            <div class="wf-container wf-topbar-flex">
+                <div>Campus Sint-Niklaas &bull; Mechelen &bull; Leuven &bull; Antwerpen &bull; Brussel &bull; Online</div>
+                <div style="display:flex;gap:16px;align-items:center;">
+                    <a href="sector-bouw.html#b2b-bouw" style="color:inherit;text-decoration:none;">Voor Bedrijven &amp; Maatwerk</a>
+                    <a href="index.html#infosessies" style="color:inherit;text-decoration:none;">Infomomenten</a>
+                    <a href="faq.html" style="color:inherit;text-decoration:none;">FAQ</a>
+                    <a href="#" style="color:inherit;text-decoration:none;">Contact</a>
+                    <a href="#" class="wf-top-favorites-btn" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+                        <span>♡</span> <span>Favorieten</span>
+                        <span class="wf-fav-count-badge" style="display:none;">0</span>
+                    </a>
+                    <a href="#" class="wf-top-user-btn" style="color:inherit;text-decoration:none;font-weight:700;">
+                        Aanmelden
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-container wf-main-header">
+            <a href="index.html" class="wf-brand-logo">
+                <div class="wf-logo-badge">S</div>
+                <div>
+                    <span class="wf-brand-name">SYNTRA</span>
+                    <span style="font-size:12px;display:block;font-weight:600;color:var(--wf-text-muted);" class="wf-brand-sub">Midden-Vlaanderen</span>
+                </div>
+            </a>
+            <nav>
+                <ul class="wf-nav-links">
+                    <li><a href="themas.html">Thema's</a></li>
+                    <li class="wf-nav-dropdown-item">
+                        <a href="themas.html" class="wf-dropdown-trigger" id="wfNavSectorenBtn">
+                            Sectoren <span class="wf-dropdown-arrow">▾</span>
+                        </a>
+                        <div class="wf-dropdown-menu">
+                            <div class="wf-dropdown-header">
+                                <span>Kies een Sector Hub</span>
+                            </div>
+                            <div class="wf-dropdown-grid">
+                                <a href="sector-bouw.html" class="wf-dropdown-link is-featured">
+                                    <div>
+                                        <strong>Bouw &amp; Energie</strong>
+                                        <small>Werfleider, HVAC, Elektriciteit, Hernieuwbaar</small>
+                                    </div>
+                                    <span class="wf-tag wf-tag-sm" style="font-size:9px; margin-left:auto;">Actieve Hub</span>
+                                </a>
+                                <a href="opleiding.html" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Elektro &amp; Automatisering</strong>
+                                        <small>Residentieel, Industrieel, Domotica, AREI</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=digitaal" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Digitaal, Data &amp; AI</strong>
+                                        <small>Python, Cybersecurity, Prompt Engineering</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=zorg" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Zorg, Welzijn &amp; Zorgkundige</strong>
+                                        <small>Verzorgende, Tandartsassistent, Optiek</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=horeca" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Voeding, Horeca &amp; Bakkerij</strong>
+                                        <small>Kok, Sommelier, Brood &amp; Banket, Chocolatier</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=ondernemen" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Ondernemen &amp; Bedrijfsvoering</strong>
+                                        <small>Boekhouden, HR, Marketing, KMO-Leiderschap</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=creatief" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Creatief &amp; Ambacht</strong>
+                                        <small>Meubelmaker, Goudsmid, Leder, Interieur</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="wf-dropdown-footer">
+                                <a href="themas.html">Bekijk alle 18 sectoren &amp; vakgebieden &rarr;</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="zoeken.html" style="color:var(--wf-primary); font-weight:800;">Alle Opleidingen</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Over Ons</a></li>
+                </ul>
+            </nav>
+            <div class="wf-nav-actions">
+                <a href="zoeken.html" class="wf-btn wf-btn-outline wf-btn-sm" id="wfNavSearchBtn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px; vertical-align:-1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Zoeken
+                </a>
+                <a href="themas.html" class="wf-btn wf-btn-primary wf-btn-sm">Opleiding kiezen &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- INTRO & BREADCRUMB -->
+    <div style="background:#FFFFFF; border-bottom:1px solid var(--wf-border); padding:24px 0;">
+        <div class="wf-container">
+            <div style="font-size:12px; color:var(--wf-text-muted); margin-bottom:8px;">
+                <a href="index.html" style="color:inherit;text-decoration:none;">Home</a> &rsaquo;
+                <strong>Opleidingenaanbod</strong>
+            </div>
+            <h1 style="font-size:32px; font-weight:900;">VIND JOUW PRAKTIJKOPLEIDING</h1>
+            <p style="color:var(--wf-text-muted); max-width:800px; margin-top:6px;">
+                Doorzoek ons volledige aanbod van dagopleidingen, avondcursussen en professionele bijscholingen. Gebruik de filters om snel de juiste opleiding op jouw campus te vinden.
+            </p>
+        </div>
+    </div>
+
+    <!-- MAIN CATALOGUS SPLIT-LAYOUT -->
+    <div class="wf-section" style="padding: 64px 0;">
+        <div class="wf-container">
+            <div style="display:grid; grid-template-columns: 290px 1fr; gap: 40px; align-items: start;">
+                
+                <!-- LINKER FILTERKOLOM (Vast & Overzichtelijk) -->
+                <aside style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:var(--wf-radius); padding:24px; position:sticky; top:120px;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; border-bottom:1px solid var(--wf-border); padding-bottom:10px;">
+                        <strong style="font-size:14px; text-transform:uppercase;">Filters</strong>
+                        <a href="#" id="filterResetBtn" style="font-size:11px; color:var(--wf-primary); text-decoration:none; font-weight:700;">Wissen</a>
+                    </div>
+
+                    <!-- Filter 1: Campus / Locatie -->
+                    <div class="wf-filter-group" id="filterGroupCampus" style="margin-bottom:24px;">
+                        <div style="font-weight:700; font-size:13px; margin-bottom:10px; text-transform:uppercase; color:var(--wf-text-muted);">Campus</div>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Mechelen (Zandpoortvest)</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Sint-Niklaas</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Leuven</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Brussel (Campus Tour &amp; Taxis)</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox"> Online / Afstandsonderwijs</label>
+                    </div>
+
+                    <!-- Filter 2: Lesmoment / Formule -->
+                    <div class="wf-filter-group" id="filterGroupLesmoment" style="margin-bottom:24px;">
+                        <div style="font-weight:700; font-size:13px; margin-bottom:10px; text-transform:uppercase; color:var(--wf-text-muted);">Lesmoment</div>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Voltijds overdag</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> 's Avonds</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox"> Zaterdag / Weekend</label>
+                    </div>
+
+                    <!-- Filter 3: Beschikbaarheid (Nieuw n.a.v. NxtPro audit) -->
+                    <div class="wf-filter-group" id="filterGroupBeschikbaarheid" style="margin-bottom:24px;">
+                        <div style="font-weight:700; font-size:13px; margin-bottom:10px; text-transform:uppercase; color:var(--wf-text-muted);">Beschikbaarheid</div>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Geplande sessies (Direct inschrijven)</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Op aanvraag / In-company</label>
+                    </div>
+
+                    <!-- Filter 4: Thema / Vakgebied -->
+                    <div class="wf-filter-group" id="filterGroupVakgebied">
+                        <div style="font-weight:700; font-size:13px; margin-bottom:10px; text-transform:uppercase; color:var(--wf-text-muted);">Vakgebied</div>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox" checked> Bouw, Hout &amp; Energie (84)</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox"> Elektrotechniek (42)</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox"> IT, Data &amp; AI (38)</label>
+                        <label style="display:flex;align-items:center;gap:8px;font-size:13px;margin-bottom:6px;cursor:pointer;"><input type="checkbox"> Bedrijf &amp; Management (61)</label>
+                    </div>
+                </aside>
+
+                <!-- RECHTER RESULTATEN KOLOM (Brede overzichtstegels) -->
+                <main>
+                    <!-- Bovenbalk met zoekveld & sortering -->
+                    <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:var(--wf-radius); padding:16px; margin-bottom:20px; display:flex; justify-content:space-between; align-items:center; gap:16px;">
+                        <div class="wf-search-box" id="catalogSearchBox" style="flex:1; max-width:400px; display:flex; align-items:center; gap:8px;">
+                            <input type="text" id="catalogKeywordInput" placeholder="Filter resultaten op trefwoord..." value="" style="width:100%; padding:8px 12px; border:1px solid var(--wf-border); border-radius:4px; font-size:14px;">
+                        </div>
+                        <div class="wf-sort-box" id="catalogSortBox" style="font-size:13px; color:var(--wf-text-muted); display:flex; align-items:center; gap:8px;">
+                            <span>Sorteer:</span>
+                            <select id="catalogSortSelect" style="padding:6px 10px; border:1px solid var(--wf-border); border-radius:4px; font-size:13px; background:#fff;">
+                                <option>Eerstvolgende startdatum</option>
+                                <option>Meest populair</option>
+                                <option>Prijs (laag &rarr; hoog)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="font-size:13px; font-weight:700; color:var(--wf-text-muted); margin-bottom:14px;">
+                        84 opleidingen gevonden in "Bouw, Hout &amp; Energie"
+                    </div>
+
+                    <!-- Resultaat 1 (Horizontale brede tegel) -->
+                    <div class="wf-card-horizontal" id="searchResultCard1">
+                        <button type="button" class="wf-fav-btn" data-course-id="EL-2026-RES" data-course-title="Residentieel Elektrotechnisch Installateur" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                            <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <div class="wf-img-ph" style="border-radius:0; border:none; border-right:1px solid var(--wf-border); min-width:140px;"></div>
+                        <div class="wf-card-body" style="padding:20px 24px;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                                <div style="display:flex; gap:6px; margin-bottom:8px;">
+                                    <span class="wf-tag wf-tag-green">Geplande sessies</span>
+                                    <span class="wf-tag">Voltijds Dagtraject &bull; 1 Jaar</span>
+                                </div>
+                                <div class="wf-price" style="margin-right: 48px;">&euro; 1.250 <small style="font-size:11px;font-weight:400;color:var(--wf-text-muted);">(BTW-vrij)</small></div>
+                            </div>
+                            <h3 style="font-size:19px; font-weight:800; margin-bottom:8px;">
+                                <a href="opleiding.html" style="color:inherit; text-decoration:none;">Residentieel Elektrotechnisch Installateur</a>
+                            </h3>
+                            <p style="font-size:13px; color:var(--wf-text-muted); margin-bottom:14px; line-height:1.4;">
+                                Word gecertificeerd vakman. Leer residentiële elektrische kringen kappen, trekken, aansluiten en keuren conform het AREI in onze praktijkateliers.
+                            </p>
+                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #EEF2F6; padding-top:12px; font-size:12px; color:var(--wf-text-muted);">
+                                <div>Mechelen &amp; Sint-Niklaas &bull; Start: 22 september 2026</div>
+                                <a href="opleiding.html" class="wf-btn wf-btn-primary wf-btn-sm">Bekijk opleiding &amp; rooster &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resultaat 2 -->
+                    <div class="wf-card-horizontal">
+                        <button type="button" class="wf-fav-btn" data-course-id="BW-2026-WERF" data-course-title="Werfleider Woning- en Appartementsbouw" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                            <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <div class="wf-img-ph" style="border-radius:0; border:none; border-right:1px solid var(--wf-border); min-width:140px;"></div>
+                        <div class="wf-card-body" style="padding:20px 24px;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                                <div style="display:flex; gap:6px; margin-bottom:8px;">
+                                    <span class="wf-tag wf-tag-green">Geplande sessies</span>
+                                    <span class="wf-tag">Avondopleiding &bull; 2 Jaar</span>
+                                </div>
+                                <div class="wf-price" style="margin-right: 48px;">&euro; 1.450</div>
+                            </div>
+                            <h3 style="font-size:19px; font-weight:800; margin-bottom:8px;">
+                                <a href="opleiding.html" style="color:inherit; text-decoration:none;">Werfleider Woning- en Appartementsbouw</a>
+                            </h3>
+                            <p style="font-size:13px; color:var(--wf-text-muted); margin-bottom:14px; line-height:1.4;">
+                                Coördineer werven van fundering tot afwerking. Focus op werfplanning, veiligheid, onderaanneming en rendementsbeheer.
+                            </p>
+                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #EEF2F6; padding-top:12px; font-size:12px; color:var(--wf-text-muted);">
+                                <div>Sint-Niklaas &amp; Brussel &bull; Start: 14 oktober 2026</div>
+                                <a href="opleiding.html" class="wf-btn wf-btn-primary wf-btn-sm">Bekijk opleiding &amp; rooster &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resultaat 3 (Op aanvraag / B2B Maatwerk variant) -->
+                    <div class="wf-card-horizontal" style="border-left: 4px solid var(--wf-primary);">
+                        <button type="button" class="wf-fav-btn" data-course-id="HVAC-2026-B2B" data-course-title="HVAC &amp; Sanitair Werfopleiding op Maat" aria-label="Bewaar in favorieten" title="Bewaar in favorieten">
+                            <svg class="wf-fav-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <div class="wf-img-ph" style="border-radius:0; border:none; border-right:1px solid var(--wf-border); min-width:140px;"></div>
+                        <div class="wf-card-body" style="padding:20px 24px;">
+                            <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                                <div style="display:flex; gap:6px; margin-bottom:8px;">
+                                    <span class="wf-tag wf-tag-blue">Op aanvraag voor bedrijven</span>
+                                    <span class="wf-tag">In-Company &bull; Flexibel</span>
+                                </div>
+                                <div class="wf-price" style="font-size:14px; color:var(--wf-primary); margin-right: 48px;">Offerte op maat</div>
+                            </div>
+                            <h3 style="font-size:19px; font-weight:800; margin-bottom:8px;">
+                                <a href="opleiding.html" style="color:inherit; text-decoration:none;">Veilig Werken op Hoogte &amp; Rolsteigers (B2B Certificering)</a>
+                            </h3>
+                            <p style="font-size:13px; color:var(--wf-text-muted); margin-bottom:14px; line-height:1.4;">
+                                Praktijkopleiding op maat voor jouw werknemers op één van onze campussen of direct op de werf. Voldoet aan de wettelijke ARAB/Codex normen.
+                            </p>
+                            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #EEF2F6; padding-top:12px; font-size:12px; color:var(--wf-text-muted);">
+                                <div>Op jouw bedrijfslocatie of campus &bull; Data in onderling overleg</div>
+                                <a href="opleiding.html" class="wf-btn wf-btn-outline wf-btn-sm">Vraag offerte / info aan &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paginering -->
+                    <div style="display:flex; justify-content:center; gap:8px; margin-top:32px;">
+                        <button class="wf-btn wf-btn-outline wf-btn-sm" disabled>&larr; Vorige</button>
+                        <button class="wf-btn wf-btn-primary wf-btn-sm">1</button>
+                        <button class="wf-btn wf-btn-outline wf-btn-sm">2</button>
+                        <button class="wf-btn wf-btn-outline wf-btn-sm">3</button>
+                        <button class="wf-btn wf-btn-outline wf-btn-sm">Volgende &rarr;</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="wf-footer">
+        <div class="wf-container" style="text-align:center;">
+            <div>&copy; 2026 Syntra &bull; NxtPro &bull; Syntra Brussel. Prototype Wireframe Suite.</div>
+        </div>
+    </footer>
+
+</body>
+</html>

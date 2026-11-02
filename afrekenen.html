@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Prototype - Afrekenen &amp; Inschrijven</title>
+    <link rel="stylesheet" href="assets/wireframe.css">
+    <link rel="stylesheet" href="assets/feedback-tool.css">
+    <script src="assets/wireframe.js" defer></script>
+    <script src="assets/feedback-tool.js" defer></script>
+    <script src="assets/schema-inspector.js" defer></script>
+</head>
+<body style="background:#F8FAFC;">
+
+    <!-- GLOBAL HEADER WIREFRAME -->
+    <header class="wf-header">
+        <div class="wf-topbar">
+            <div class="wf-container wf-topbar-flex">
+                <div>Campus Sint-Niklaas &bull; Mechelen &bull; Leuven &bull; Antwerpen &bull; Brussel &bull; Online</div>
+                <div style="display:flex;gap:16px;align-items:center;">
+                    <a href="sector-bouw.html#b2b-bouw" style="color:inherit;text-decoration:none;">Voor Bedrijven &amp; Maatwerk</a>
+                    <a href="index.html#infosessies" style="color:inherit;text-decoration:none;">Infomomenten</a>
+                    <a href="#" style="color:inherit;text-decoration:none;">Contact</a>
+                    <a href="#" class="wf-top-favorites-btn" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+                        <span>♡</span> <span>Favorieten</span>
+                        <span class="wf-fav-count-badge" style="display:none;">0</span>
+                    </a>
+                    <a href="#" class="wf-top-user-btn" style="color:inherit;text-decoration:none;font-weight:700;">
+                        Aanmelden
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-container wf-main-header">
+            <a href="index.html" class="wf-brand-logo">
+                <div class="wf-logo-badge">S</div>
+                <div>
+                    <span class="wf-brand-name">SYNTRA</span>
+                    <span style="font-size:12px;display:block;font-weight:600;color:var(--wf-text-muted);" class="wf-brand-sub">Midden-Vlaanderen</span>
+                </div>
+            </a>
+            <div style="font-size:13px; font-weight:700; color:var(--wf-text-muted); display:flex; align-items:center; gap:8px;">
+                <span>Beveiligde SSL-Inschrijving</span>
+                <span class="wf-tag wf-tag-dark">Koppeling met KERN/SIS</span>
+            </div>
+            <div class="wf-nav-actions">
+                <a href="opleiding.html" class="wf-btn wf-btn-outline wf-btn-sm">&larr; Terug naar Cursus</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CHECKOUT BREADCRUMB & STAPPENINDICATOR -->
+    <div style="background:#FFFFFF; border-bottom:1px solid #EEF2F6; padding:16px 0;">
+        <div class="wf-container">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+                <div style="font-size:12px; color:var(--wf-text-muted);">
+                    <a href="index.html" style="color:inherit; text-decoration:none;">Home</a> &rsaquo;
+                    <a href="opleiding.html" style="color:inherit; text-decoration:none;">Opleiding</a> &rsaquo;
+                    <strong>Afrekenen &amp; Inschrijving</strong>
+                </div>
+                <!-- Stappen indicator -->
+                <div style="display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700;">
+                    <span style="color:#111827;">1. Cursuskeuze</span>
+                    <span style="color:#CBD5E1;">&mdash;</span>
+                    <span style="color:#111827; background:#E5E7EB; padding:3px 8px; border-radius:4px;">2. Facturatie &amp; Deelnemers</span>
+                    <span style="color:#CBD5E1;">&mdash;</span>
+                    <span style="color:#94A3B8;">3. Bevestiging</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CHECKOUT CONTENT -->
+    <main class="wf-section" style="padding:40px 0 60px;">
+        <div class="wf-container">
+            
+            <h1 style="font-size:30px; font-weight:900; margin-bottom:8px;">
+                Inschrijven voor je opleiding
+            </h1>
+            <p style="font-size:15px; color:var(--wf-text-muted); margin-bottom:28px;">
+                Vul onderstaande gegevens in om je inschrijving definitief te registreren. Je kan één of meerdere deelnemers toevoegen.
+            </p>
+
+            <form id="wfCheckoutForm" action="bevestiging.html" method="get">
+                <div class="wf-checkout-layout">
+                    
+                    <!-- LINKERKOLOM: INSCHRIJFFORMULIER -->
+                    <div>
+                        
+                        <!-- STAP 1: FACTURATIE- & KLANTGEGEVENS (ONMIDDELLIJK ALS EERSTE STAP!) -->
+                        <div class="wf-checkout-step">
+                            <div class="wf-checkout-step-header">
+                                <div class="wf-step-number">1</div>
+                                <div>
+                                    <div class="wf-checkout-step-title">Facturatie- &amp; Klantgegevens (Wie betaalt?)</div>
+                                    <div style="font-size:12px; color:var(--wf-text-muted);">Op wiens naam moet de officiële factuur worden opgemaakt?</div>
+                                </div>
+                            </div>
+
+                            <div class="wf-toggle-tabs" id="customerTypeTabs">
+                                <button type="button" class="wf-toggle-tab active" id="tabParticulier" onclick="switchCustomerType('particulier')">
+                                    Particulier (Privé Factuur)
+                                </button>
+                                <button type="button" class="wf-toggle-tab" id="tabBedrijf" onclick="switchCustomerType('bedrijf')">
+                                    Bedrijf / Zelfstandige (B2B Factuur)
+                                </button>
+                            </div>
+                            <input type="hidden" name="klanttype" id="inputKlanttype" value="particulier">
+
+                            <!-- VELDEN VOOR BEDRIJF / ZAKELIJK (DIRECT ZICHTBAAR BIJ BEDRIJF) -->
+                            <div id="fieldsBedrijf" style="display:none; background:#F8FAFC; border:1px solid #CBD5E1; border-radius:8px; padding:20px; margin-bottom:16px;">
+                                <div class="wf-form-row">
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">Bedrijfsnaam / Onderneming *</label>
+                                        <input type="text" class="wf-form-input" name="bedrijfsnaam" id="inputBedrijfsnaam" placeholder="bv. Bouwbedrijf Peeters NV" value="Bouwbedrijf Peeters NV">
+                                    </div>
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">
+                                            <span>Ondernemings- / BTW-nummer *</span>
+                                            <small style="color:#059669; font-weight:700;">Geldig (Modulo 97)</small>
+                                        </label>
+                                        <input type="text" class="wf-form-input" name="btwnummer" id="inputBTW" placeholder="BE 0123.456.789" value="BE 0845.123.789">
+                                    </div>
+                                </div>
+
+                                <div class="wf-form-row">
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">E-mailadres voor Facturatie *</label>
+                                        <input type="email" class="wf-form-input" name="facturatie_email" placeholder="facturen@bedrijf.be" value="facturen@peetersbouw.be">
+                                        <small style="font-size:11px; color:var(--wf-text-muted);">PDF en e-factuur (UBL / Peppol) worden hierheen verzonden.</small>
+                                    </div>
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">PO-nummer / Bestelbon referentie</label>
+                                        <input type="text" class="wf-form-input" name="po_nummer" placeholder="bv. PO-2026-9041" value="PO-2026-9041">
+                                    </div>
+                                </div>
+
+                                <div class="wf-form-row">
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">Contactpersoon Facturatie (Voornaam &amp; Naam)</label>
+                                        <input type="text" class="wf-form-input" name="contactpersoon" placeholder="bv. Martine Janssens" value="Martine Janssens">
+                                    </div>
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">Telefoonnummer Administratie</label>
+                                        <input type="tel" class="wf-form-input" name="bedrijf_telefoon" placeholder="03 770 12 34" value="03 770 12 34">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- VELDEN VOOR PARTICULIERE FACTUUR -->
+                            <div id="fieldsParticulier">
+                                <div class="wf-form-row">
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">Voornaam *</label>
+                                        <input type="text" class="wf-form-input" id="fact_voornaam" name="fact_voornaam" required placeholder="bv. Thomas" value="Thomas">
+                                    </div>
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">Familienaam *</label>
+                                        <input type="text" class="wf-form-input" id="fact_achternaam" name="fact_achternaam" required placeholder="bv. Peeters" value="Peeters">
+                                    </div>
+                                </div>
+
+                                <div class="wf-form-row">
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">E-mailadres voor Factuur &amp; Bevestiging *</label>
+                                        <input type="email" class="wf-form-input" id="fact_email" name="fact_email" required placeholder="thomas.peeters@voorbeeld.be" value="thomas.peeters@voorbeeld.be">
+                                    </div>
+                                    <div class="wf-form-row-1">
+                                        <label class="wf-form-label">GSM / Telefoonnummer *</label>
+                                        <input type="tel" class="wf-form-input" id="fact_telefoon" name="fact_telefoon" required placeholder="0470 12 34 56" value="0472 98 76 54">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GEMEENSCHAPPELIJK FACTURATIEADRES -->
+                            <div class="wf-form-row" style="grid-template-columns: 2fr 1fr;">
+                                <div class="wf-form-row-1">
+                                    <label class="wf-form-label">Straat &amp; Huisnummer Facturatieadres *</label>
+                                    <input type="text" class="wf-form-input" id="fact_straat" name="fact_straat" required placeholder="Kerkstraat 14" value="Kerkstraat 14">
+                                </div>
+                                <div class="wf-form-row-1">
+                                    <label class="wf-form-label">Bus</label>
+                                    <input type="text" class="wf-form-input" id="fact_bus" name="fact_bus" placeholder="Bus 2">
+                                </div>
+                            </div>
+
+                            <div class="wf-form-row">
+                                <div class="wf-form-row-1">
+                                    <label class="wf-form-label">Postcode *</label>
+                                    <input type="text" class="wf-form-input" id="fact_postcode" name="fact_postcode" required placeholder="9100" value="9100">
+                                </div>
+                                <div class="wf-form-row-1">
+                                    <label class="wf-form-label">Woonplaats / Gemeente *</label>
+                                    <input type="text" class="wf-form-input" id="fact_gemeente" name="fact_gemeente" required placeholder="Sint-Niklaas" value="Sint-Niklaas">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STAP 2: DEELNEMERS / CURSISTEN (MEERDERE DEELNEMERS INSCHRIJVEN!) -->
+                        <div class="wf-checkout-step">
+                            <div class="wf-checkout-step-header" style="justify-content:space-between; flex-wrap:wrap;">
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <div class="wf-step-number">2</div>
+                                    <div>
+                                        <div class="wf-checkout-step-title">Gegevens van de Deelnemers / Cursisten</div>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">Wie volgt effectief de lessen? (Persoonsgegevens voor VLAIO-getuigschrift &amp; Canvas)</div>
+                                    </div>
+                                </div>
+
+                                <span class="wf-tag wf-tag-dark" id="participantBadgeCount">1 Deelnemer</span>
+                            </div>
+
+                            <!-- Optie voor particulier: ik ben zelf deelnemer -->
+                            <div id="selfParticipantOption" style="margin-bottom:16px; background:#F1F5F9; padding:10px 14px; border-radius:6px; font-size:13px;">
+                                <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
+                                    <input type="checkbox" id="copyFacturatieToP1" checked onchange="toggleCopyFromFacturatie(this.checked)">
+                                    <span><strong>Ik ben zelf de deelnemer</strong> (neem gegevens automatisch over uit facturatie)</span>
+                                </label>
+                            </div>
+
+                            <!-- DEELNEMER CONTAINER -->
+                            <div id="participantsContainer">
+                                
+                                <!-- DEELNEMER 1 -->
+                                <div class="wf-participant-card" id="participantCard1">
+                                    <div class="wf-participant-header">
+                                        <div style="font-weight:800; font-size:14px; display:flex; align-items:center; gap:8px;">
+                                            <span>Deelnemer 1</span>
+                                            <span class="wf-tag wf-tag-outline">Hoofddeelnemer</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="wf-form-row">
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">Voornaam Deelnemer *</label>
+                                            <input type="text" class="wf-form-input" id="p1_voornaam" name="deelnemer_voornaam[]" required placeholder="bv. Thomas" value="Thomas">
+                                        </div>
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">Familienaam Deelnemer *</label>
+                                            <input type="text" class="wf-form-input" id="p1_achternaam" name="deelnemer_achternaam[]" required placeholder="bv. Peeters" value="Peeters">
+                                        </div>
+                                    </div>
+
+                                    <div class="wf-form-row">
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">E-mailadres Cursist *</label>
+                                            <input type="email" class="wf-form-input" id="p1_email" name="deelnemer_email[]" required placeholder="thomas.peeters@voorbeeld.be" value="thomas.peeters@voorbeeld.be">
+                                            <small style="font-size:11px; color:var(--wf-text-muted);">Voor lokaalwijzigingen en lesmateriaal in Canvas.</small>
+                                        </div>
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">GSM Cursist *</label>
+                                            <input type="tel" class="wf-form-input" id="p1_telefoon" name="deelnemer_telefoon[]" required placeholder="0470 12 34 56" value="0472 98 76 54">
+                                        </div>
+                                    </div>
+
+                                    <div class="wf-form-row">
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">
+                                                <span>Geboortedatum *</span>
+                                                <small style="color:var(--wf-text-muted); font-weight:400;">Wettelijk vereist</small>
+                                            </label>
+                                            <input type="date" class="wf-form-input" name="deelnemer_geboortedatum[]" required value="1994-05-18">
+                                            <small style="font-size:11px; color:var(--wf-text-muted);">Noodzakelijk voor het officiële VLAIO-getuigschrift.</small>
+                                        </div>
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">
+                                                <span>Rijksregisternummer</span>
+                                                <small style="color:var(--wf-text-muted); font-weight:400;">Fiscaal attest / VOV</small>
+                                            </label>
+                                            <input type="text" class="wf-form-input" name="deelnemer_rrn[]" placeholder="94.05.18-123.45" value="94.05.18-123.45">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- KNOP OM EXTRA DEELNEMERS TOE TE VOEGEN -->
+                            <div style="margin-top:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                                <button type="button" class="wf-btn wf-btn-outline" style="border:2px dashed #111827; font-weight:700; background:#FFFFFF;" onclick="addParticipant()">
+                                    + Extra deelnemer toevoegen (+ &euro; 1.250)
+                                </button>
+                                <span style="font-size:12px; color:var(--wf-text-muted);">
+                                    Schrijf je een volledig bouwteam in? Je kan tot 12 techniekers toevoegen.
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- STAP 3: SUBSIDIES & SECTORFINANCIERING -->
+                        <div class="wf-checkout-step">
+                            <div class="wf-checkout-step-header">
+                                <div class="wf-step-number">3</div>
+                                <div class="wf-checkout-step-title">Subsidies &amp; Sectorpremies</div>
+                            </div>
+                            <p style="font-size:12px; color:var(--wf-text-muted); margin-bottom:16px;">
+                                Duid aan of je gebruik wenst te maken van sectorale premies of overheidstussenkomsten:
+                            </p>
+
+                            <div style="display:flex; flex-direction:column; gap:10px;">
+                                <label class="wf-payment-option active">
+                                    <input type="radio" name="subsidie" value="geen" checked style="margin-top:3px;">
+                                    <div>
+                                        <strong>Geen subsidie gebruiken</strong>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">Het reguliere inschrijvingsgeld wordt rechtstreeks voldaan.</div>
+                                    </div>
+                                </label>
+
+                                <label class="wf-payment-option">
+                                    <input type="radio" name="subsidie" value="constructiv" style="margin-top:3px;">
+                                    <div>
+                                        <strong>Constructiv Sectorpremie (Bouw PC 124) / Volta (PC 149.01)</strong>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">
+                                            Tussenkomst in opleidings- en loonkost voor techniekers en bouwarbeiders.
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="wf-payment-option">
+                                    <input type="radio" name="subsidie" value="vov" style="margin-top:3px;">
+                                    <div>
+                                        <strong>Vlaams Opleidingsverlof (VOV)</strong>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">
+                                            Wij bezorgen jouw werkgever het officiële inschrijvingsattest voor betaald educatief verlof (tot 125u).
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="wf-payment-option">
+                                    <input type="radio" name="subsidie" value="cheques" style="margin-top:3px;">
+                                    <div>
+                                        <strong>Opleidingscheques voor Werknemers</strong>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">
+                                            Tot &euro; 250 subsidie van de Vlaamse overheid voor werknemers die op eigen initiatief een cursus volgen.
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- STAP 4: BETAALMETHODE -->
+                        <div class="wf-checkout-step">
+                            <div class="wf-checkout-step-header">
+                                <div class="wf-step-number">4</div>
+                                <div class="wf-checkout-step-title">Betaalmethode</div>
+                            </div>
+
+                            <div style="display:flex; flex-direction:column; gap:10px;">
+                                <label class="wf-payment-option active">
+                                    <input type="radio" name="betaalmethode" value="bancontact" checked style="margin-top:3px;">
+                                    <div>
+                                        <strong>Bancontact / Payconiq</strong>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">Betaal direct via QR-code of bank-app. Plaatsen direct definitief gereserveerd.</div>
+                                    </div>
+                                </label>
+
+                                <label class="wf-payment-option" id="paymentOptAfbetalingsplan">
+                                    <input type="radio" name="betaalmethode" value="afbetalingsplan" style="margin-top:3px;">
+                                    <div style="flex:1;">
+                                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                                            <strong>Syntra Afbetalingsplan (Gespreid in 4 renteloze schijven)</strong>
+                                            <span class="wf-tag wf-tag-green" style="font-size:10.5px; padding:2px 8px;">0% Rente &bull; Geen meerkost</span>
+                                        </div>
+                                        <div style="font-size:12px; color:var(--wf-text-muted); margin-top:2px;">
+                                            Betaal enkel de 1e schijf (&euro; 312,50) nu online. De overige 3 schijven verlopen maandelijks via automatische SEPA-domiciliëring.
+                                        </div>
+                                        <div id="afbetalingDetails" style="display:none; margin-top:10px; padding:10px 12px; background:#F0FDF4; border:1px solid #BBF7D0; border-radius:4px; font-size:11.5px; color:#166534; line-height:1.5;">
+                                            <strong>Jouw betaaltermijnen:</strong><br>
+                                            &bull; <strong>Vandaag bij inschrijving:</strong> &euro; 312,50 (1e schijf)<br>
+                                            &bull; <strong>Binnen 30 dagen:</strong> &euro; 312,50 (2e schijf via domiciliëring)<br>
+                                            &bull; <strong>Binnen 60 dagen:</strong> &euro; 312,50 (3e schijf via domiciliëring)<br>
+                                            &bull; <strong>Binnen 90 dagen:</strong> &euro; 312,50 (4e schijf via domiciliëring)<br>
+                                            <span style="font-size:11px; color:#15803D;">Direct geactiveerd &bull; Geen lening, geen kredietcheck &bull; 0% dossierkosten</span>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <label class="wf-payment-option">
+                                    <input type="radio" name="betaalmethode" value="factuur" style="margin-top:3px;">
+                                    <div>
+                                        <strong>Overschrijving op Factuur (30 dagen betaaltermijn)</strong>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">Je ontvangt de factuur per e-mail met gestructureerde mededeling vóór aanvang van de lessen.</div>
+                                    </div>
+                                </label>
+
+                                <label class="wf-payment-option">
+                                    <input type="radio" name="betaalmethode" value="creditcard" style="margin-top:3px;">
+                                    <div>
+                                        <strong>Kredietkaart (Visa / Mastercard)</strong>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">Veilige transactie via 3D Secure.</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- RECHTERKOLOM: DYNAMISCHE BESTELLINGS- & PRIJSSAMENVATTING -->
+                    <aside>
+                        <div class="wf-order-summary-box">
+                            <h3 style="font-size:18px; font-weight:900; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid #EEF2F6;">
+                                Jouw Inschrijving
+                            </h3>
+
+                            <div style="margin-bottom:16px;">
+                                <span class="wf-tag wf-tag-dark" id="summaryCampusTag">Campus Sint-Niklaas</span>
+                                <h4 style="font-size:16px; font-weight:800; margin:8px 0 4px;" id="summaryCourseTitle">
+                                    Residentieel Elektrotechnisch Installateur
+                                </h4>
+                                <div style="font-size:12px; color:var(--wf-text-muted);" id="summarySchedule">
+                                    14/09/2026 – 16/06/2027<br>
+                                    Maandag &amp; Woensdag (18:30 – 22:00)<br>
+                                    Truweelstraat 85, 9100 Sint-Niklaas
+                                </div>
+                            </div>
+
+                            <div style="background:#F8FAFC; border:1px solid var(--wf-border); border-radius:6px; padding:12px; margin-bottom:16px; font-size:12px;">
+                                <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                                    <span>Aantal deelnemers:</span>
+                                    <strong id="summaryCountText">1 persoon</strong>
+                                </div>
+                                <div style="display:flex; justify-content:space-between;">
+                                    <span>Prijs per deelnemer:</span>
+                                    <strong>&euro; 1.250,00</strong>
+                                </div>
+                            </div>
+
+                            <div class="wf-order-item">
+                                <span>Subtotaal inschrijvingsgeld:</span>
+                                <span id="summarySubtotal">&euro; 1.250,00</span>
+                            </div>
+
+                            <div class="wf-order-item">
+                                <span>BTW (0% - Vrijgesteld art. 44):</span>
+                                <span>&euro; 0,00</span>
+                            </div>
+
+                            <div class="wf-order-total">
+                                <span>Totaalbedrag:</span>
+                                <span id="summaryTotalText">&euro; 1.250,00</span>
+                            </div>
+
+                            <!-- DYNAMISCH AFBETALINGSPLAN VAKJE -->
+                            <div id="summaryInstallmentBox" style="display:none; margin:12px 0; padding:10px 12px; background:#EFF6FF; border:1px solid #BFDBFE; border-radius:6px; font-size:12px; color:#1E40AF; line-height:1.45;">
+                                <div style="display:flex; justify-content:space-between; font-weight:800; font-size:13px; margin-bottom:4px; color:#1D4ED8;">
+                                    <span>Nu te betalen (1e schijf):</span>
+                                    <span id="summaryFirstInstallment">&euro; 312,50</span>
+                                </div>
+                                <div style="font-size:11px; color:#3B82F6;">
+                                    Resterend saldo: 3 &times; <strong id="summaryRemainingInstallments">&euro; 312,50</strong> via maandelijkse domiciliëring (0% rente).
+                                </div>
+                            </div>
+
+                            <div style="margin:20px 0;">
+                                <label style="display:flex; gap:10px; align-items:flex-start; font-size:12px; color:var(--wf-text-main); cursor:pointer;">
+                                    <input type="checkbox" required checked style="margin-top:2px;">
+                                    <span>Ik verklaar akkoord te gaan met de <a href="#" style="color:inherit; text-decoration:underline;">algemene voorwaarden</a> en het cursusreglement van Syntra.</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" id="btnSubmitCheckout" class="wf-btn wf-btn-primary" style="width:100%; padding:14px; font-size:15px; font-weight:800; justify-content:center;">
+                                Inschrijving Bevestigen &rarr;
+                            </button>
+
+                            <div style="font-size:11px; color:var(--wf-text-muted); text-align:center; margin-top:12px; line-height:1.4;">
+                                &bull; Directe synchronisatie naar KERN/SIS<br>
+                                &bull; Factuur op bedrijfsnaam conform btw-wetgeving<br>
+                                &bull; Kosteloos annuleren tot 14 dagen voor de start
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="wf-footer">
+        <div class="wf-container" style="text-align:center;">
+            <div>&copy; 2026 Syntra &bull; NxtPro &bull; Syntra Brussel. Prototype Checkout &amp; Inschrijvingsflow.</div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIEVE LOGICA: MULTI-DEELNEMERS & FACTURATIE -->
+    <script>
+    var pricePerParticipant = 1250;
+    var participantCount = 1;
+
+    function switchCustomerType(type) {
+        var tabParticulier = document.getElementById('tabParticulier');
+        var tabBedrijf = document.getElementById('tabBedrijf');
+        var fieldsBedrijf = document.getElementById('fieldsBedrijf');
+        var fieldsParticulier = document.getElementById('fieldsParticulier');
+        var inputKlanttype = document.getElementById('inputKlanttype');
+        var selfOption = document.getElementById('selfParticipantOption');
+
+        if (type === 'bedrijf') {
+            tabParticulier.classList.remove('active');
+            tabBedrijf.classList.add('active');
+            fieldsBedrijf.style.display = 'block';
+            fieldsParticulier.style.display = 'none';
+            inputKlanttype.value = 'bedrijf';
+            selfOption.style.display = 'none'; // Bij bedrijf schrijft HR/bedrijfsleider meestal werknemers in
+        } else {
+            tabBedrijf.classList.remove('active');
+            tabParticulier.classList.add('active');
+            fieldsBedrijf.style.display = 'none';
+            fieldsParticulier.style.display = 'block';
+            inputKlanttype.value = 'particulier';
+            selfOption.style.display = 'block';
+        }
+    }
+
+    function addParticipant() {
+        participantCount++;
+        var container = document.getElementById('participantsContainer');
+        var card = document.createElement('div');
+        card.className = 'wf-participant-card';
+        card.id = 'participantCard' + participantCount;
+        
+        card.innerHTML = 
+            '<div class="wf-participant-header">' +
+                '<div style="font-weight:800; font-size:14px; display:flex; align-items:center; gap:8px;">' +
+                    '<span>Deelnemer ' + participantCount + '</span>' +
+                '</div>' +
+                '<button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="padding:2px 8px; font-size:11px; color:#DC2626; border-color:#DC2626;" onclick="removeParticipant(' + participantCount + ')">' +
+                    'Verwijderen' +
+                '</button>' +
+            '</div>' +
+            '<div class="wf-form-row">' +
+                '<div class="wf-form-row-1">' +
+                    '<label class="wf-form-label">Voornaam Deelnemer ' + participantCount + ' *</label>' +
+                    '<input type="text" class="wf-form-input" name="deelnemer_voornaam[]" required placeholder="bv. Kevin">' +
+                '</div>' +
+                '<div class="wf-form-row-1">' +
+                    '<label class="wf-form-label">Familienaam Deelnemer ' + participantCount + ' *</label>' +
+                    '<input type="text" class="wf-form-input" name="deelnemer_achternaam[]" required placeholder="bv. Wouters">' +
+                '</div>' +
+            '</div>' +
+            '<div class="wf-form-row">' +
+                '<div class="wf-form-row-1">' +
+                    '<label class="wf-form-label">E-mailadres Cursist *</label>' +
+                    '<input type="email" class="wf-form-input" name="deelnemer_email[]" required placeholder="cursist' + participantCount + '@bedrijf.be">' +
+                '</div>' +
+                '<div class="wf-form-row-1">' +
+                    '<label class="wf-form-label">GSM Cursist *</label>' +
+                    '<input type="tel" class="wf-form-input" name="deelnemer_telefoon[]" required placeholder="0470 00 00 00">' +
+                '</div>' +
+            '</div>' +
+            '<div class="wf-form-row">' +
+                '<div class="wf-form-row-1">' +
+                    '<label class="wf-form-label">Geboortedatum *</label>' +
+                    '<input type="date" class="wf-form-input" name="deelnemer_geboortedatum[]" required>' +
+                '</div>' +
+                '<div class="wf-form-row-1">' +
+                    '<label class="wf-form-label">Rijksregisternummer</label>' +
+                    '<input type="text" class="wf-form-input" name="deelnemer_rrn[]" placeholder="JJ.MM.DD-XXX.XX">' +
+                '</div>' +
+            '</div>';
+
+        container.appendChild(card);
+        updateOrderSummary();
+    }
+
+    function removeParticipant(id) {
+        var card = document.getElementById('participantCard' + id);
+        if (card) {
+            card.remove();
+            participantCount = document.querySelectorAll('.wf-participant-card').length;
+            updateOrderSummary();
+        }
+    }
+
+    function updateOrderSummary() {
+        var total = participantCount * pricePerParticipant;
+        var installment = total / 4;
+
+        document.getElementById('participantBadgeCount').textContent = participantCount + (participantCount === 1 ? ' Deelnemer' : ' Deelnemers');
+        document.getElementById('summaryCountText').textContent = participantCount + (participantCount === 1 ? ' persoon' : ' personen');
+        document.getElementById('summarySubtotal').textContent = '€ ' + total.toLocaleString('nl-BE', { minimumFractionDigits: 2 });
+        document.getElementById('summaryTotalText').textContent = '€ ' + total.toLocaleString('nl-BE', { minimumFractionDigits: 2 });
+
+        var firstInstEl = document.getElementById('summaryFirstInstallment');
+        var restInstEl = document.getElementById('summaryRemainingInstallments');
+        if (firstInstEl) firstInstEl.textContent = '€ ' + installment.toLocaleString('nl-BE', { minimumFractionDigits: 2 });
+        if (restInstEl) restInstEl.textContent = '€ ' + installment.toLocaleString('nl-BE', { minimumFractionDigits: 2 });
+    }
+
+    function toggleCopyFromFacturatie(checked) {
+        if (checked) {
+            document.getElementById('p1_voornaam').value = document.getElementById('fact_voornaam').value;
+            document.getElementById('p1_achternaam').value = document.getElementById('fact_achternaam').value;
+            document.getElementById('p1_email').value = document.getElementById('fact_email').value;
+            document.getElementById('p1_telefoon').value = document.getElementById('fact_telefoon').value;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var params = new URLSearchParams(window.location.search);
+        var campus = params.get('campus');
+        var moment = params.get('moment');
+        var start = params.get('start');
+
+        if (campus) {
+            document.getElementById('summaryCampusTag').textContent = 'Campus ' + campus;
+            document.getElementById('summarySchedule').innerHTML = 
+                (start || '14/09/2026') + ' – Juni 2027<br>' +
+                (moment || 'Avondles') + '<br>' +
+                'Campus ' + campus;
+        }
+
+        // Live syncing van facturatie naar deelnemer 1 als checkbox actief is
+        ['fact_voornaam', 'fact_achternaam', 'fact_email', 'fact_telefoon'].forEach(function(fieldId) {
+            var el = document.getElementById(fieldId);
+            if (el) {
+                el.addEventListener('input', function() {
+                    var chk = document.getElementById('copyFacturatieToP1');
+                    if (chk && chk.checked) {
+                        toggleCopyFromFacturatie(true);
+                    }
+                });
+            }
+        });
+
+        // Wisselen betaalmethode en dynamisch afbetalingsplan
+        var paymentRadios = document.querySelectorAll('input[name="betaalmethode"]');
+        var afbetalingDetails = document.getElementById('afbetalingDetails');
+        var installmentBox = document.getElementById('summaryInstallmentBox');
+        var btnSubmit = document.getElementById('btnSubmitCheckout');
+
+        paymentRadios.forEach(function(radio) {
+            radio.addEventListener('change', function() {
+                paymentRadios.forEach(function(r) {
+                    var lbl = r.closest('.wf-payment-option');
+                    if (lbl) lbl.classList.remove('active');
+                });
+                var activeLbl = this.closest('.wf-payment-option');
+                if (activeLbl) activeLbl.classList.add('active');
+
+                if (this.value === 'afbetalingsplan') {
+                    if (afbetalingDetails) afbetalingDetails.style.display = 'block';
+                    if (installmentBox) installmentBox.style.display = 'block';
+                    if (btnSubmit) btnSubmit.innerHTML = '1e Schijf Betalen &amp; Inschrijving Bevestigen &rarr;';
+                } else {
+                    if (afbetalingDetails) afbetalingDetails.style.display = 'none';
+                    if (installmentBox) installmentBox.style.display = 'none';
+                    if (btnSubmit) btnSubmit.innerHTML = 'Inschrijving Bevestigen &rarr;';
+                }
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Prototype - Veelgestelde Vragen (FAQ)</title>
+    <link rel="stylesheet" href="assets/wireframe.css">
+    <link rel="stylesheet" href="assets/feedback-tool.css">
+    <script src="assets/wireframe.js" defer></script>
+    <script src="assets/feedback-tool.js" defer></script>
+    <script src="assets/schema-inspector.js" defer></script>
+</head>
+<body>
+
+    <!-- GLOBAL HEADER WIREFRAME -->
+    <header class="wf-header">
+        <div class="wf-topbar">
+            <div class="wf-container wf-topbar-flex">
+                <div>Campus Sint-Niklaas &bull; Mechelen &bull; Leuven &bull; Antwerpen &bull; Brussel &bull; Online</div>
+                <div style="display:flex;gap:16px;align-items:center;">
+                    <a href="sector-bouw.html#b2b-bouw" style="color:inherit;text-decoration:none;">Voor Bedrijven &amp; Maatwerk</a>
+                    <a href="index.html#infosessies" style="color:inherit;text-decoration:none;">Infomomenten</a>
+                    <a href="faq.html" style="color:var(--wf-primary); font-weight:700; text-decoration:none;">FAQ</a>
+                    <a href="#" style="color:inherit;text-decoration:none;">Contact</a>
+                    <a href="#" class="wf-top-favorites-btn" style="color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:4px;">
+                        <span>Favorieten</span>
+                        <span class="wf-fav-count-badge" style="display:none;">0</span>
+                    </a>
+                    <a href="#" class="wf-top-user-btn" style="color:inherit;text-decoration:none;font-weight:700;">
+                        Aanmelden
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="wf-container wf-main-header">
+            <a href="index.html" class="wf-brand-logo">
+                <div class="wf-logo-badge">S</div>
+                <div>
+                    <span class="wf-brand-name">SYNTRA</span>
+                    <span style="font-size:12px;display:block;font-weight:600;color:var(--wf-text-muted);" class="wf-brand-sub">Midden-Vlaanderen</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="wf-nav-links">
+                    <li><a href="themas.html">Thema's</a></li>
+                    <li class="wf-nav-dropdown-item">
+                        <a href="themas.html" class="wf-dropdown-trigger" id="wfNavSectorenBtn">
+                            Sectoren <span class="wf-dropdown-arrow">▾</span>
+                        </a>
+                        <div class="wf-dropdown-menu">
+                            <div class="wf-dropdown-header">
+                                <span>Kies een Sector Hub</span>
+                            </div>
+                            <div class="wf-dropdown-grid">
+                                <a href="sector-bouw.html" class="wf-dropdown-link is-featured">
+                                    <div>
+                                        <strong>Bouw &amp; Energie</strong>
+                                        <small>Werfleider, HVAC, Elektriciteit, Hernieuwbaar</small>
+                                    </div>
+                                    <span class="wf-tag wf-tag-sm" style="font-size:9px; margin-left:auto;">Actieve Hub</span>
+                                </a>
+                                <a href="opleiding.html" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Elektro &amp; Automatisering</strong>
+                                        <small>Residentieel, Industrieel, Domotica, AREI</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=digitaal" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Digitaal, Data &amp; AI</strong>
+                                        <small>Python, Cybersecurity, Prompt Engineering</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=zorg" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Zorg, Welzijn &amp; Zorgkundige</strong>
+                                        <small>Verzorgende, Tandartsassistent, Optiek</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=horeca" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Voeding, Horeca &amp; Bakkerij</strong>
+                                        <small>Kok, Sommelier, Brood &amp; Banket, Chocolatier</small>
+                                    </div>
+                                </a>
+                                <a href="zoeken.html?sector=ondernemen" class="wf-dropdown-link">
+                                    <div>
+                                        <strong>Ondernemen &amp; Bedrijfsvoering</strong>
+                                        <small>Boekhouden, HR, Marketing, KMO-Leiderschap</small>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="wf-dropdown-footer">
+                                <a href="themas.html">Bekijk alle 18 sectoren &amp; vakgebieden &rarr;</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="zoeken.html">Alle Opleidingen</a></li>
+                    <li><a href="faq.html" style="color:var(--wf-primary); font-weight:800;">FAQ</a></li>
+                    <li><a href="#">Over Ons</a></li>
+                </ul>
+            </nav>
+
+            <div class="wf-nav-actions">
+                <a href="zoeken.html" class="wf-btn wf-btn-outline wf-btn-sm" id="wfNavSearchBtn">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px; vertical-align:-1px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>Zoeken
+                </a>
+                <a href="themas.html" class="wf-btn wf-btn-primary wf-btn-sm">Opleiding kiezen &rarr;</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- INTRO HEADER -->
+    <section class="wf-section" style="padding:60px 0 40px; background:#FFFFFF; border-bottom:1px solid var(--wf-border);">
+        <div class="wf-container">
+            <div style="font-size:12px; color:var(--wf-text-muted); margin-bottom:12px;">
+                <a href="index.html" style="color:inherit;text-decoration:none;">Home</a> &rsaquo;
+                <strong>Veelgestelde Vragen</strong>
+            </div>
+            <div style="max-width:840px;">
+                <span class="wf-tag wf-tag-blue" style="margin-bottom:12px;">Kennisbank &amp; Ondersteuning</span>
+                <h1 style="font-size:36px; font-weight:900; line-height:1.2; margin-bottom:14px;">
+                    VEELGESTELDE VRAGEN (FAQ)
+                </h1>
+                <p style="font-size:16px; color:var(--wf-text-muted); line-height:1.6; margin-bottom:24px;">
+                    Vind snel een antwoord op vragen over inschrijven, getuigschriften, subsidies, lesmomenten en praktische atelierorganisatie. Volledig geoptimaliseerd met Schema.org FAQPage structured data voor zoekmachines en AI-assistenten.
+                </p>
+
+                <!-- Search Input for FAQs -->
+                <div style="position:relative; max-width:600px;">
+                    <input type="search" id="faqSearchInput" placeholder="Zoek op trefwoord (bv. subsidie, getuigschrift, kmo, avondles)..." 
+                           class="wf-input" style="width:100%; padding:12px 18px; font-size:14px; border-radius:6px; border:1px solid var(--wf-border-strong);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ CATEGORIEËN & ACCORDIONS -->
+    <section class="wf-section" style="padding:48px 0; background:#F8FAFC;">
+        <div class="wf-container">
+            <div style="display:grid; grid-template-columns: 280px 1fr; gap:36px; align-items:flex-start;">
+                
+                <!-- Links: Filter & Categorie Jumpers -->
+                <div style="background:#FFFFFF; border:1px solid var(--wf-border); border-radius:6px; padding:20px; position:sticky; top:120px;">
+                    <h3 style="font-size:15px; font-weight:800; margin-bottom:14px; text-transform:uppercase; letter-spacing:0.5px;">Categorieën</h3>
+                    <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:13.5px;">
+                        <li><a href="#cat-inschrijving" style="color:var(--wf-primary); font-weight:700; text-decoration:none; display:block; padding:6px 10px; border-radius:4px; background:#EFF6FF;">1. Inschrijven &amp; Toelating</a></li>
+                        <li><a href="#cat-subsidies" style="color:var(--wf-text-main); text-decoration:none; display:block; padding:6px 10px; border-radius:4px;">2. Subsidies &amp; Financiering</a></li>
+                        <li><a href="#cat-getuigschriften" style="color:var(--wf-text-main); text-decoration:none; display:block; padding:6px 10px; border-radius:4px;">3. Getuigschriften &amp; Examens</a></li>
+                        <li><a href="#cat-organisatie" style="color:var(--wf-text-main); text-decoration:none; display:block; padding:6px 10px; border-radius:4px;">4. Lesorganisatie &amp; Campussen</a></li>
+                        <li><a href="#cat-b2b" style="color:var(--wf-text-main); text-decoration:none; display:block; padding:6px 10px; border-radius:4px;">5. Bedrijven &amp; NxtPro Maatwerk</a></li>
+                    </ul>
+
+                    <div style="margin-top:24px; padding-top:18px; border-top:1px solid #E2E8F0;">
+                        <strong style="font-size:13px; display:block; margin-bottom:6px;">Geen antwoord gevonden?</strong>
+                        <p style="font-size:12px; color:var(--wf-text-muted); line-height:1.45; margin-bottom:12px;">Stel je vraag direct aan onze digitale studieadviseur of contacteer een campusbegeleider.</p>
+                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" style="width:100%; font-size:12px;" onclick="document.getElementById('athenaLauncher') ? document.getElementById('athenaLauncher').click() : alert('Chat openen...');">💬 Vraag het Athena AI</button>
+                    </div>
+                </div>
+
+                <!-- Rechts: Vragen per Categorie (met schema-markup attributen) -->
+                <div>
+                    
+                    <!-- Categorie 1: Inschrijven & Toelating -->
+                    <div id="cat-inschrijving" style="margin-bottom:40px;">
+                        <h2 style="font-size:22px; font-weight:800; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--wf-primary); display:flex; justify-content:space-between; align-items:center;">
+                            <span>1. Inschrijven &amp; Toelatingsvoorwaarden</span>
+                            <span class="wf-tag wf-tag-sm">3 Vragen</span>
+                        </h2>
+
+                        <details open class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Kan ik inschrijven zonder technisch vooropleidingsdiploma?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Ja. Vrijwel al onze praktijkgerichte dag- en avondopleidingen starten vanaf de absolute basis. Er is geen specifiek technisch vooropleidingsdiploma vereist, tenzij expliciet vermeld bij gespecialiseerde vervolgmodules (zoals industriële hoogspanning of residentiële koeltechniek). Onze docenten begeleiden je stapsgewijs vanaf de eerste theorie tot het zelfstandig werken in het atelier.</p>
+                            </div>
+                        </details>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Vanaf welke leeftijd kan ik starten met een voltijdse dagopleiding of avondcursus?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Voor onze voltijdse dagtrajecten en ondernemersopleidingen moet je voldaan hebben aan de voltijdse leerplicht (minstens 18 jaar zijn, of 16 jaar mits voldaan aan de eerste twee leerjaren van het secundair onderwijs). Avondcursussen en bijscholingen staan open voor iedereen vanaf 18 jaar.</p>
+                            </div>
+                        </details>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Kan ik een opleiding kosteloos annuleren als mijn werksituatie verandert?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Annuleren kan schriftelijk conform onze algemene voorwaarden. Tot 14 kalenderdagen vóór de officiële startdatum van de opleiding rekenen we enkel administratiekosten aan (€ 50). Vanaf minder dan 14 dagen vóór aanvang blijft het volledige inschrijvingsgeld verschuldigd, tenzij je een gewettigd medisch attest kan voorleggen.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Categorie 2: Subsidies & Financiering -->
+                    <div id="cat-subsidies" style="margin-bottom:40px;">
+                        <h2 style="font-size:22px; font-weight:800; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--wf-primary); display:flex; justify-content:space-between; align-items:center;">
+                            <span>2. Subsidies, Opleidingscheques &amp; Financiering</span>
+                            <span class="wf-tag wf-tag-sm">3 Vragen</span>
+                        </h2>
+
+                        <details open class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Kan ik nog gebruikmaken van de kmo-portefeuille voor mijn opleiding?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Conform de recente beslissingen van de Vlaamse Regering is de klassieke kmo-portefeuille voor algemene opleidingen grondig gewijzigd en afgebouwd. Erkende beroeps- en veiligheidsopleidingen komen echter nog in aanmerking voor gerichte <strong>sectorpremies</strong> (zoals Constructiv PC 124 voor de bouw en Volta voor elektro) en het <strong>Vlaams Opleidingsverlof (VOV)</strong>. Op elke cursusfiche vermelden we exact welke financiële voordelen van toepassing zijn.</p>
+                            </div>
+                        </details>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Heb ik recht op Vlaams Opleidingsverlof (VOV) als werknemer in de privésector?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Ja. Werknemers uit de privésector die minstens halftijds tewerkgesteld zijn in het Vlaamse Gewest hebben recht op Vlaams Opleidingsverlof voor erkende arbeidsmarktgerichte opleidingen (minstens 32 lesuren). Je behoudt je loon tijdens de afwezigheidsuren (geplafonneerd conform de geldende barema's) terwijl je werkgever een terugbetaling ontvangt van de Vlaamse overheid.</p>
+                            </div>
+                        </details>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Zijn de inschrijvingsgelden bij Syntra vrijgesteld van btw?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Ja. Als erkende instelling voor beroepsopleiding en vorming vallen de onderwijsactiviteiten van Syntra onder de wettelijke btw-vrijstelling conform <strong>artikel 44, § 2, 4° van het Belgisch Btw-Wetboek</strong>. Het bedrag dat je op de website ziet is het exacte nettobedrag, zonder bijkomende 21% btw.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Categorie 3: Getuigschriften & Examens -->
+                    <div id="cat-getuigschriften" style="margin-bottom:40px;">
+                        <h2 style="font-size:22px; font-weight:800; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--wf-primary); display:flex; justify-content:space-between; align-items:center;">
+                            <span>3. Getuigschriften, Diploma's &amp; Certificering</span>
+                            <span class="wf-tag wf-tag-sm">2 Vragen</span>
+                        </h2>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Wat is het verschil tussen een getuigschrift en een officieel ondernemersdiploma?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Een <strong>Getuigschrift</strong> bewijst dat je geslaagd bent voor de beroepsgerichte praktijk- en theorie-examens van het vakgebied (bv. Residentieel Elektricien). Combineer je dit getuigschrift met de succesvol afgeronde module <em>Basiskennis Bedrijfsbeheer / Ondernemerschap</em>, dan ontvang je het officiële <strong>Ondernemersdiploma</strong> uitgereikt door de Vlaamse Gemeenschap, waarmee je je als zelfstandige in hoofd- of bijberoep kan vestigen.</p>
+                            </div>
+                        </details>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Kan ik vrijstellingen krijgen voor eerdere studies of werkervaring (EVC/EVK)?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Zeker. Indien je reeds een relevant diploma (bv. TSO/BSO elektriciteit of graduaat) behaalde of over aantoonbare werkervaring beschikt, kan je vóór de start van het cursusjaar een vrijstellingsdossier indienen bij de trajectbegeleider. Na goedkeuring door de examencommissie word je vrijgesteld van de betreffende theoretische of praktische modules, inclusief een evenredige vermindering van het inschrijvingsgeld.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <!-- Categorie 4: Bedrijven & B2B -->
+                    <div id="cat-b2b" style="margin-bottom:40px;">
+                        <h2 style="font-size:22px; font-weight:800; margin-bottom:16px; padding-bottom:8px; border-bottom:2px solid var(--wf-primary); display:flex; justify-content:space-between; align-items:center;">
+                            <span>4. Bedrijven, In-Company &amp; NxtPro Maatwerk</span>
+                            <span class="wf-tag wf-tag-sm">2 Vragen</span>
+                        </h2>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Kunnen opleidingen exclusief voor onze medewerkers op de bedrijfssite worden georganiseerd?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>Ja. Via onze B2B-pijler <strong>NxtPro</strong> ontwikkelen we maatwerktrajecten die volledig worden afgestemd op de machines, werkwijzen en veiligheidsnormen van jouw onderneming. De lessen kunnen plaatsvinden in één van onze hoogtechnologische praktijkateliers of direct op de werf of productielocatie van het bedrijf, op flexibele data en uren.</p>
+                            </div>
+                        </details>
+
+                        <details class="wf-accordion" style="margin-bottom:12px;">
+                            <summary style="font-size:15px; font-weight:700;">
+                                Hoe verloopt de facturatie en betaling via bestelbon (Purchase Order)?
+                            </summary>
+                            <div style="padding-top:12px; font-size:14px; color:var(--wf-text-main); line-height:1.6;">
+                                <p>In onze checkout kunnen bedrijven kiezen voor <em>'Factuur op termijn (30 dagen)'</em> met vermelding van het interne PO-nummer en facturatie-e-mailadres. Na automatische controle van het btw-nummer (Modulo 97) wordt de inschrijving direct bevestigd en ontvangt de boekhoudafdeling een officiële digitale factuur conform de Peppol-normen.</p>
+                            </div>
+                        </details>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="wf-footer">
+        <div class="wf-container" style="text-align:center;">
+            <div>&copy; 2026 Syntra &bull; NxtPro &bull; Syntra Brussel. Prototype Wireframe Suite.</div>
+        </div>
+    </footer>
+
+    <!-- STRUCTURED DATA: FAQPage Schema (Machine-readable for Google & AI Bot indexering) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Kan ik inschrijven zonder technisch vooropleidingsdiploma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Vrijwel al onze praktijkgerichte dag- en avondopleidingen starten vanaf de absolute basis. Er is geen specifiek technisch vooropleidingsdiploma vereist, tenzij expliciet vermeld bij gespecialiseerde vervolgmodules."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vanaf welke leeftijd kan ik starten met een voltijdse dagopleiding of avondcursus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Voor onze voltijdse dagtrajecten en ondernemersopleidingen moet je voldaan hebben aan de voltijdse leerplicht (minstens 18 jaar zijn, of 16 jaar mits voldaan aan de eerste twee leerjaren van het secundair onderwijs). Avondcursussen en bijscholingen staan open voor iedereen vanaf 18 jaar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kan ik nog gebruikmaken van de kmo-portefeuille voor mijn opleiding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Conform de recente beslissingen van de Vlaamse Regering is de klassieke kmo-portefeuille voor algemene opleidingen grondig gewijzigd en afgebouwd. Erkende beroeps- en veiligheidsopleidingen komen echter nog in aanmerking voor gerichte sectorpremies (zoals Constructiv PC 124 voor de bouw en Volta voor elektro) en het Vlaams Opleidingsverlof (VOV)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Heb ik recht op Vlaams Opleidingsverlof (VOV) als werknemer in de privésector?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Werknemers uit de privésector die minstens halftijds tewerkgesteld zijn in het Vlaamse Gewest hebben recht op Vlaams Opleidingsverlof voor erkende arbeidsmarktgerichte opleidingen (minstens 32 lesuren)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Zijn de inschrijvingsgelden bij Syntra vrijgesteld van btw?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Als erkende instelling voor beroepsopleiding en vorming vallen de onderwijsactiviteiten van Syntra onder de wettelijke btw-vrijstelling conform artikel 44, § 2, 4° van het Belgisch Btw-Wetboek."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wat is het verschil tussen een getuigschrift en een officieel ondernemersdiploma?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Een Getuigschrift bewijst dat je geslaagd bent voor de beroepsgerichte praktijk- en theorie-examens van het vakgebied. Combineer je dit getuigschrift met de succesvol afgeronde module Basiskennis Bedrijfsbeheer / Ondernemerschap, dan ontvang je het officiële Ondernemersdiploma uitgereikt door de Vlaamse Gemeenschap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kunnen opleidingen exclusief voor onze medewerkers op de bedrijfssite worden georganiseerd?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Via onze B2B-pijler NxtPro ontwikkelen we maatwerktrajecten die volledig worden afgestemd op de machines, werkwijzen en veiligheidsnormen van jouw onderneming. De lessen kunnen plaatsvinden in onze ateliers of direct op de werf of bedrijfslocatie."
+          }
+        }
+      ]
+    }
+    </script>
+
+</body>
+</html>
