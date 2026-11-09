@@ -1069,17 +1069,47 @@
         ],
         'afrekenen': [
             {
+                id: 'checkout_auth_mode',
+                selector: '#authModeTabs',
+                event: 'select_auth_mode',
+                category: 'Toegang & Identificatie',
+                trigger: 'Keuze tussen "Afrekenen als gast" of "Aanmelden met Syntra / NxtPro ID"',
+                funnelStep: 'Checkout Stap 1: Toegang & Identificatie',
+                rationale: 'Meet de verhouding tussen frictieloze gastinschrijvingen en terugkerende cursisten/bedrijven met bestaand account.',
+                payload: {
+                    event: 'select_auth_mode',
+                    auth_mode: 'guest',
+                    is_inline: true
+                }
+            },
+            {
+                id: 'checkout_idp_login',
+                selector: '#btnInlineLogin',
+                event: 'login',
+                category: 'Centrale IDP / Single Sign-On',
+                trigger: 'Inline aanmelden via IDP API of federatie (itsme / Microsoft 365) zonder externe redirect',
+                funnelStep: 'Checkout Stap 1: Inline Authenticatie',
+                rationale: 'Voorkomt funnel-drop-off door de cursist op de checkoutpagina te houden en direct profiel- & facturatiegegevens in te laden.',
+                payload: {
+                    event: 'login',
+                    method: 'inline_idp',
+                    is_inline: true,
+                    user_id: 'IDP-USR-89412',
+                    profile_prefilled: true
+                }
+            },
+            {
                 id: 'checkout_segment_b2b',
                 selector: '#customerTypeTabs',
                 event: 'checkout_segment_change',
                 category: 'Klantsegmentatie (B2B vs B2C)',
                 trigger: 'Wisselen tussen Particulier (privé) en Bedrijf (B2B factuur)',
-                funnelStep: 'Checkout Stap 1: Facturatiegegevens',
+                funnelStep: 'Checkout Stap 2: Facturatiegegevens',
                 rationale: 'Essentieel voor de scheiding tussen Syntra (B2C) en NxtPro (B2B); B2B leidt tot hogere orderwaarde en meerdere deelnemers.',
                 payload: {
                     event: 'checkout_segment_change',
                     customer_type: 'bedrijf',
-                    funnel_step: 1
+                    funnel_step: 2
                 }
             },
             {

@@ -88,10 +88,99 @@
                     <!-- LINKERKOLOM: INSCHRIJFFORMULIER -->
                     <div>
                         
-                        <!-- STAP 1: FACTURATIE- & KLANTGEGEVENS (ONMIDDELLIJK ALS EERSTE STAP!) -->
+                        <!-- STAP 1: IDENTIFICATIE & TOEGANG (INLINE IDP LOGIN VS GAST AFREKENEN) -->
+                        <div class="wf-checkout-step" id="wfAuthStep">
+                            <div class="wf-checkout-step-header" style="justify-content:space-between; flex-wrap:wrap;">
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <div class="wf-step-number" id="authStepIcon">1</div>
+                                    <div>
+                                        <div class="wf-checkout-step-title">Toegang &amp; Identificatie</div>
+                                        <div style="font-size:12px; color:var(--wf-text-muted);">Schrijf direct in als gast of meld je aan met jouw profiel (geen externe redirect)</div>
+                                    </div>
+                                </div>
+                                <span class="wf-tag wf-tag-outline" id="authBadge">Gastmodus</span>
+                            </div>
+
+                            <!-- Schakelaar Gast vs Aanmelden -->
+                            <div class="wf-toggle-tabs" id="authModeTabs" style="margin-bottom:14px;">
+                                <button type="button" class="wf-toggle-tab active" id="tabGuest" onclick="switchAuthMode('guest')">
+                                    ⚡ Afrekenen als Gast (Direct inschrijven)
+                                </button>
+                                <button type="button" class="wf-toggle-tab" id="tabLogin" onclick="switchAuthMode('login')">
+                                    🔐 Aanmelden met Syntra / NxtPro ID
+                                </button>
+                            </div>
+
+                            <!-- INLINE GAST INFO -->
+                            <div id="authGuestInfo" style="background:#F8FAFC; border:1px solid var(--wf-border); border-radius:6px; padding:12px 16px; font-size:12.5px; color:var(--wf-text-muted); line-height:1.5;">
+                                <strong>Snel inschrijven zonder verplicht account:</strong> Je vult hieronder eenmalig je gegevens in. Na afronding kan je desgewenst met één klik een wachtwoord instellen om je getuigschriften en cursussen online te raadplegen.
+                            </div>
+
+                            <!-- INLINE IDP LOGIN PANEEL (100% Inline via IDP API - Geen redirect naar externe pagina!) -->
+                            <div id="authLoginPanel" style="display:none; background:#FFFFFF; border:2px solid #0284C7; border-radius:8px; padding:18px; margin-top:8px;">
+                                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; border-bottom:1px solid #E2E8F0; padding-bottom:10px;">
+                                    <div>
+                                        <strong style="font-size:14px; color:#0369A1;">Inline Aanmelden via Centrale IDP</strong>
+                                        <div style="font-size:11.5px; color:var(--wf-text-muted);">Blijf op deze pagina: jouw profiel en facturatiegegevens worden direct ingeladen</div>
+                                    </div>
+                                    <span class="wf-tag wf-tag-green" style="font-size:10px;">Single Sign-On (OIDC)</span>
+                                </div>
+
+                                <div id="loginFormFields">
+                                    <div class="wf-form-row">
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">E-mailadres / Gebruikersnaam</label>
+                                            <input type="email" class="wf-form-input" id="idpEmail" placeholder="jouw.naam@bedrijf.be" value="karel@peetersbouw.be">
+                                        </div>
+                                        <div class="wf-form-row-1">
+                                            <label class="wf-form-label">Wachtwoord</label>
+                                            <input type="password" class="wf-form-input" id="idpPassword" placeholder="••••••••••••" value="Syntra2026!">
+                                        </div>
+                                    </div>
+
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-top:10px;">
+                                        <div style="display:flex; gap:10px; align-items:center;">
+                                            <button type="button" class="wf-btn wf-btn-primary wf-btn-sm" id="btnInlineLogin" onclick="simulateInlineLogin('credentials')" style="padding:8px 18px; font-weight:800;">
+                                                Aanmelden &amp; Gegevens Ophalen &rarr;
+                                            </button>
+                                            <a href="#" style="font-size:12px; color:var(--wf-text-muted); text-decoration:underline;">Wachtwoord vergeten?</a>
+                                        </div>
+                                        
+                                        <!-- SSO FEDERATED OPTIONS (INLINE POPUP/MODAL) -->
+                                        <div style="display:flex; gap:8px; align-items:center;">
+                                            <span style="font-size:11.5px; color:var(--wf-text-muted);">Of federatief:</span>
+                                            <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" onclick="simulateInlineLogin('itsme')" style="padding:5px 10px; font-size:11px; display:inline-flex; align-items:center; gap:4px; font-weight:700;">
+                                                <span style="font-weight:900; color:#E11D48;">itsme</span>®
+                                            </button>
+                                            <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" onclick="simulateInlineLogin('microsoft')" style="padding:5px 10px; font-size:11px; display:inline-flex; align-items:center; gap:4px;">
+                                                <svg width="12" height="12" viewBox="0 0 21 21"><path fill="#f25022" d="M1 1h9v9H1z"/><path fill="#00a4ef" d="M1 11h9v9H1z"/><path fill="#7fba00" d="M11 1h9v9h-9z"/><path fill="#ffb900" d="M11 11h9v9h-9z"/></svg> Microsoft 365
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- SUCCESVOLLE AANGEMELDE STAAT -->
+                                <div id="loginSuccessState" style="display:none; background:#F0FDF4; border:1px solid #BBF7D0; border-radius:6px; padding:12px 16px;">
+                                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                                        <div style="display:flex; align-items:center; gap:12px;">
+                                            <div style="width:38px; height:38px; border-radius:50%; background:#16A34A; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px;">KS</div>
+                                            <div>
+                                                <strong style="font-size:13.5px; color:#15803D;" id="loggedInUserName">Karel Strosse (Bouwbedrijf Peeters NV)</strong>
+                                                <div style="font-size:11.5px; color:#166534;" id="loggedInUserEmail">karel@peetersbouw.be &bull; BTW BE 0845.123.789 &bull; IDP Token actief (inline)</div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="wf-btn wf-btn-outline wf-btn-sm" onclick="logoutInline()" style="font-size:11px; padding:4px 10px; border-color:#86EFAC; color:#15803D; background:#FFFFFF;">
+                                            Afmelden / Ander account
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- STAP 2: FACTURATIE- & KLANTGEGEVENS (WIE BETAALT?) -->
                         <div class="wf-checkout-step">
                             <div class="wf-checkout-step-header">
-                                <div class="wf-step-number">1</div>
+                                <div class="wf-step-number">2</div>
                                 <div>
                                     <div class="wf-checkout-step-title">Facturatie- &amp; Klantgegevens (Wie betaalt?)</div>
                                     <div style="font-size:12px; color:var(--wf-text-muted);">Op wiens naam moet de officiële factuur worden opgemaakt?</div>
@@ -197,11 +286,11 @@
                             </div>
                         </div>
 
-                        <!-- STAP 2: DEELNEMERS / CURSISTEN (MEERDERE DEELNEMERS INSCHRIJVEN!) -->
+                        <!-- STAP 3: DEELNEMERS / CURSISTEN (MEERDERE DEELNEMERS INSCHRIJVEN!) -->
                         <div class="wf-checkout-step">
                             <div class="wf-checkout-step-header" style="justify-content:space-between; flex-wrap:wrap;">
                                 <div style="display:flex; align-items:center; gap:12px;">
-                                    <div class="wf-step-number">2</div>
+                                    <div class="wf-step-number">3</div>
                                     <div>
                                         <div class="wf-checkout-step-title">Gegevens van de Deelnemers / Cursisten</div>
                                         <div style="font-size:12px; color:var(--wf-text-muted);">Wie volgt effectief de lessen? (Persoonsgegevens voor VLAIO-getuigschrift &amp; Canvas)</div>
@@ -286,10 +375,10 @@
                             </div>
                         </div>
 
-                        <!-- STAP 3: SUBSIDIES & SECTORFINANCIERING -->
+                        <!-- STAP 4: SUBSIDIES & SECTORFINANCIERING -->
                         <div class="wf-checkout-step">
                             <div class="wf-checkout-step-header">
-                                <div class="wf-step-number">3</div>
+                                <div class="wf-step-number">4</div>
                                 <div class="wf-checkout-step-title">Subsidies &amp; Sectorpremies</div>
                             </div>
                             <p style="font-size:12px; color:var(--wf-text-muted); margin-bottom:16px;">
@@ -337,10 +426,10 @@
                             </div>
                         </div>
 
-                        <!-- STAP 4: BETAALMETHODE -->
+                        <!-- STAP 5: BETAALMETHODE & AFBETALINGSPLAN -->
                         <div class="wf-checkout-step">
                             <div class="wf-checkout-step-header">
-                                <div class="wf-step-number">4</div>
+                                <div class="wf-step-number">5</div>
                                 <div class="wf-checkout-step-title">Betaalmethode</div>
                             </div>
 
@@ -448,6 +537,19 @@
                                 <div style="font-size:11px; color:#3B82F6;">
                                     Resterend saldo: 3 &times; <strong id="summaryRemainingInstallments">&euro; 312,50</strong> via maandelijkse domiciliëring (0% rente).
                                 </div>
+                            </div>
+
+                            <!-- OPT-IN MIJN SYNTRA ACCOUNT VOOR GASTEN (JUST-IN-TIME ACCOUNT CREATION) -->
+                            <div id="optInAccountBox" style="margin:16px 0; padding:12px; background:#F8FAFC; border:1px solid #CBD5E1; border-radius:6px; font-size:12px;">
+                                <label style="display:flex; gap:10px; align-items:flex-start; cursor:pointer;">
+                                    <input type="checkbox" id="chkCreateAccount" name="create_account_opt_in" checked style="margin-top:2px;">
+                                    <div>
+                                        <strong>Maak direct een 'Mijn Syntra' profiel aan met deze gegevens</strong>
+                                        <div style="font-size:11px; color:var(--wf-text-muted); margin-top:2px;">
+                                            We sturen een activatielink per e-mail om je getuigschriften, lessenrooster en facturen online te bekijken (geen wachtwoord vereist tijdens checkout).
+                                        </div>
+                                    </div>
+                                </label>
                             </div>
 
                             <div style="margin:20px 0;">
@@ -594,6 +696,127 @@
             document.getElementById('p1_email').value = document.getElementById('fact_email').value;
             document.getElementById('p1_telefoon').value = document.getElementById('fact_telefoon').value;
         }
+    }
+
+    function logMeetplan(eventName, payload) {
+        window.dataLayer = window.dataLayer || [];
+        window.wfDataLayerLog = window.wfDataLayerLog || [];
+        var data = Object.assign({ event: eventName }, payload);
+        window.dataLayer.push(data);
+        window.wfDataLayerLog.push({ timestamp: new Date().toLocaleTimeString('nl-BE'), event: eventName, payload: data });
+        if (typeof updateDrawerLiveLog === 'function') updateDrawerLiveLog();
+    }
+
+    function switchAuthMode(mode) {
+        var tabGuest = document.getElementById('tabGuest');
+        var tabLogin = document.getElementById('tabLogin');
+        var guestInfo = document.getElementById('authGuestInfo');
+        var loginPanel = document.getElementById('authLoginPanel');
+        var badge = document.getElementById('authBadge');
+        var optInBox = document.getElementById('optInAccountBox');
+
+        if (mode === 'login') {
+            tabGuest.classList.remove('active');
+            tabLogin.classList.add('active');
+            guestInfo.style.display = 'none';
+            loginPanel.style.display = 'block';
+            badge.textContent = 'Aanmelden vereist';
+            badge.className = 'wf-tag wf-tag-sm';
+            badge.style.background = '#E0F2FE';
+            badge.style.color = '#0369A1';
+        } else {
+            tabLogin.classList.remove('active');
+            tabGuest.classList.add('active');
+            loginPanel.style.display = 'none';
+            guestInfo.style.display = 'block';
+            badge.textContent = 'Gastmodus';
+            badge.className = 'wf-tag wf-tag-outline';
+            badge.style.background = '';
+            badge.style.color = '';
+            if (optInBox) {
+                optInBox.innerHTML = 
+                    '<label style="display:flex; gap:10px; align-items:flex-start; cursor:pointer;">' +
+                        '<input type="checkbox" id="chkCreateAccount" name="create_account_opt_in" checked style="margin-top:2px;">' +
+                        '<div>' +
+                            '<strong>Maak direct een \'Mijn Syntra\' profiel aan met deze gegevens</strong>' +
+                            '<div style="font-size:11px; color:var(--wf-text-muted); margin-top:2px;">' +
+                                'We sturen een activatielink per e-mail om je getuigschriften, lessenrooster en facturen online te bekijken (geen wachtwoord vereist tijdens checkout).' +
+                            '</div>' +
+                        '</div>' +
+                    '</label>';
+            }
+        }
+
+        logMeetplan('select_auth_mode', {
+            auth_mode: mode,
+            is_inline: true
+        });
+    }
+
+    function simulateInlineLogin(provider) {
+        var btn = document.getElementById('btnInlineLogin');
+        var originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="wf-spinner" style="display:inline-block; width:12px; height:12px; border:2px solid #fff; border-top-color:transparent; border-radius:50%; animation:wf-spin 0.6s linear infinite; margin-right:6px; vertical-align:middle;"></span> Bezig met aanmelden via IDP...';
+        btn.disabled = true;
+
+        setTimeout(function() {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+
+            document.getElementById('loginFormFields').style.display = 'none';
+            document.getElementById('loginSuccessState').style.display = 'block';
+
+            var badge = document.getElementById('authBadge');
+            badge.textContent = 'IDP Verifieerd ✓';
+            badge.className = 'wf-tag wf-tag-green';
+            badge.style.background = '';
+            badge.style.color = '';
+
+            // Automatisch profiel invullen (Bedrijfsleider / Particulier)
+            switchCustomerType('bedrijf');
+            document.getElementById('inputBedrijfsnaam').value = 'Bouwbedrijf Peeters NV';
+            document.getElementById('inputBTW').value = 'BE 0845.123.789';
+            document.getElementById('fact_voornaam').value = 'Karel';
+            document.getElementById('fact_achternaam').value = 'Strosse';
+            document.getElementById('fact_email').value = 'karel@peetersbouw.be';
+            document.getElementById('fact_telefoon').value = '0472 98 76 54';
+            document.getElementById('fact_straat').value = 'Truweelstraat 42';
+            document.getElementById('fact_postcode').value = '9100';
+            document.getElementById('fact_gemeente').value = 'Sint-Niklaas';
+
+            document.getElementById('p1_voornaam').value = 'Karel';
+            document.getElementById('p1_achternaam').value = 'Strosse';
+            document.getElementById('p1_email').value = 'karel@peetersbouw.be';
+            document.getElementById('p1_telefoon').value = '0472 98 76 54';
+
+            var optInBox = document.getElementById('optInAccountBox');
+            if (optInBox) {
+                optInBox.innerHTML = 
+                    '<div style="color:#15803D; font-weight:700; display:flex; align-items:center; gap:8px;">' +
+                        '<span>✓ Inschrijving wordt gekoppeld aan jouw bestaande Syntra ID (karel@peetersbouw.be).</span>' +
+                    '</div>';
+            }
+
+            logMeetplan('login', {
+                method: provider || 'credentials_inline',
+                is_inline: true,
+                user_id: 'IDP-USR-89412',
+                customer_type: 'bedrijf',
+                prefilled_fields: 9
+            });
+        }, 450);
+    }
+
+    function logoutInline() {
+        document.getElementById('loginFormFields').style.display = 'block';
+        document.getElementById('loginSuccessState').style.display = 'none';
+        var badge = document.getElementById('authBadge');
+        badge.textContent = 'Niet Aangemeld';
+        badge.className = 'wf-tag wf-tag-outline';
+
+        logMeetplan('logout', {
+            auth_mode: 'guest'
+        });
     }
 
     document.addEventListener('DOMContentLoaded', function() {
